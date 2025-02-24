@@ -99,4 +99,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
     });
+    // Neue Funktion für die Scroll-Animation der Balken
+    const skillBars = document.querySelectorAll(".skill-bar");
+    
+    // Präzise angepasste Werte für die Linien – kein zu viel / zu wenig
+    const skillLevels = [
+        "calc(66.66% + 0.5px)",  // 1. Linie (Basics)
+        "calc(100% - 0.25px)",  // 2. Linie (Gemeistert)
+        "calc(66.66% + 0.5px)", 
+        "calc(66.66% + 0.5px)", 
+        "calc(100% - 0.25px)",  
+        "calc(33.33% + 0.5px)"   // Mitte (Lernfähig)
+    ]; 
+
+    function checkScroll() {
+        const windowHeight = window.innerHeight;
+        const middlePoint = windowHeight / 2;
+        const activationRange = 300;
+
+        skillBars.forEach((bar, index) => {
+            const barPosition = bar.parentElement.getBoundingClientRect().top;
+
+            if (barPosition < middlePoint + activationRange && barPosition > middlePoint - activationRange) {
+                bar.style.width = skillLevels[index]; // Pixelgenaue Anpassung
+            } else {
+                bar.style.width = "0%";
+            }
+        });
+    }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll(); // Falls Balken direkt sichtbar ist
 });
