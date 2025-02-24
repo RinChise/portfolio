@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de" class="overscroll-none scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body id="home" class="bg-dark text-white font-sans">
+    
+    <!-- Navbar (Fixiert) -->
+    <header class="fixed top-5 left-1/2 -translate-x-1/2 w-[224px] bg-panel text-white rounded-xl shadow-lg py-3 px-6 backdrop-blur-md z-50 hover:scale-105 transition-transform duration-200 ease-out">
+        <nav class="flex justify-center gap-7">
+            <!-- Home -->
+            <a href="#home" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="home" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                    Home
+                </span>
+            </a>
+            <!-- Skills -->
+            <a href="#skills" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="cog" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200 "></i>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                    Skills
+                </span>
+            </a>
+            <!-- Projekte -->
+            <a href="#projects" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="folder" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                    Projekte
+                </span>
+            </a>
+            <!-- About -->
+            <a href="#about" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="user" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
+                <!-- Tooltip -->
+                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none whitespace-nowrap">
+                    About Me
+                </span>
+            </a>
+        </nav>
+    </header>
+    
+
+    <!-- Hauptcontainer mit Grid (3-Spalten-Layout) -->
+    <div class="grid grid-cols-12 min-h-screen px-10">
+
+        <!-- Linker leerer Bereich (20%) -->
+        <div class="col-span-2"></div>
+
+        <!-- Mittlerer Bereich (60%) mit Inhalt -->
+        <div class="col-span-8 flex gap-10 mt-28">
+
+            <!-- Visitenkarte (links innerhalb der Mitte) -->
+            <aside class="h-[650px] bg-white text-black p-10 rounded-2xl shadow-lg text-center sticky top-28 flex flex-col justify-between">
+                <img src="me.jpeg" class="rounded-xl max-w-[280px] mb-8 mx-auto" alt="Alexander Merklinger">
+                <h2 class="text-3xl font-bold mb-5">Alexander Merklinger</h2>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Angehender Entwickler<br>kreativ & detailverliebt
+                </p>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center gap-4 mt-6">
+                    <a href="https://github.com/rinchise" target="_blank" class="relative group flex items-center justify-center w-9 h-9 rounded-md hover:bg-gray-200 transition duration-200 hover:-translate-y-1">
+                        <!-- Icon -->
+                        <i data-lucide="github" class="text-2xl text-primary stroke-[1.5]"></i>
+                
+                        <!-- Tooltip -->
+                        <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                            GitHub
+                        </span>
+                    </a>
+                    <a href="https://linkedin.com/in/deinusername" target="_blank" class="relative group flex items-center justify-center w-9 h-9 rounded-md hover:bg-gray-200 transition duration-200 hover:-translate-y-1">
+                        <!-- Icon-->
+                        <i data-lucide="linkedin" class="text-2xl text-primary stroke-[1.5]"></i>
+
+                        <!-- Tooltip -->
+                        <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                            LinkedIn
+                        </span>
+                    </a>
+                    <a href="https://twitter.com/deinusername" target="_blank" class="relative group flex items-center justify-center w-9 h-9 rounded-md hover:bg-gray-200 transition duration-200 hover:-translate-y-1">
+                        <!-- Icon -->
+                        <i data-lucide="mail" class="text-2xl text-primary stroke-[1.5]"></i>
+                        
+                        <!-- Tooltip -->
+                        <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                            Kontakt
+                        </span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Hauptinhalt (rechts neben der Visitenkarte) -->
+            <main class="flex-1 p-10 space-y-52 overflow-y-auto">
+
+                <!-- Home -->
+                <section class="text-white">
+                    <!-- Hauptüberschrift -->
+                    <div class="text-8xl font-extrabold">
+                        <h1 class="hover-text-effect cursor-default">SOFTWARE</h1>
+                        <h2 class="hover-text-effect text-neutral-700 cursor-default">ENTWICKLER</h2>
+                    </div>
+                    <!-- Beschreibung -->
+                    <p class="text-2xl text-neutral-400 mt-8 mx-auto leading-relaxed">
+                        Ich bin auf dem Weg, ein erfahrener Softwareentwickler zu werden, und lerne täglich Neues dazu. Meine Leidenschaft gilt der Entwicklung von intuitiven und funktionalen Anwendungen, die Nutzer begeistern und Prozesse optimieren.</p>
+
+                        
+                </section>
+                <div id="projects"></div>
+                
+                <!-- Skills -->
+                <section class="text-white">
+                    <div class="text-8xl font-extrabold">
+                        <h1 class="hover-text-effect cursor-default">SKILLS</h1>
+                        <h2 class="hover-text-effect text-neutral-700 cursor-default">FÄHIGKEITEN</h2>
+                    </div>
+                    <!-- Beschreibung -->
+                    <p class="text-2xl text-neutral-400 mt-8 mx-auto leading-relaxed">
+                        Ich bin auf dem Weg, ein erfahrener Anwendungsentwickler zu werden, und lerne täglich Neues dazu. Meine Leidenschaft gilt der Entwicklung von intuitiven und funktionalen Anwendungen, die Nutzer begeistern und Prozesse optimieren.</p>
+
+                        
+                </section>
+                
+                <!-- Projekte -->
+                <section class="text-white">
+                    <!-- Hauptüberschrift -->
+                    <div class="text-8xl font-extrabold">
+                        <h1 class="hover-text-effect cursor-default">MEINE</h1>
+                        <h2 class="hover-text-effect text-neutral-700 cursor-default">PROJEKTE</h2>
+                    </div>
+
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 mt-8 gap-6">
+                        <div class="bg-white text-black p-5 rounded-lg shadow-md">
+                            <img src="projekt1.jpg" alt="Projekt 1" class="rounded-lg w-full mb-4">
+                            <h3 class="text-xl font-bold">Projekt 1</h3>
+                            <p class="text-gray-600">Kurzbeschreibung...</p>
+                        </div>
+                        <div class="bg-white text-black p-5 rounded-lg shadow-md">
+                            <img src="projekt2.jpg" alt="Projekt 2" class="rounded-lg w-full mb-4">
+                            <h3 class="text-xl font-bold">Projekt 2</h3>
+                            <p class="text-gray-600">Kurzbeschreibung...</p>
+                        </div>
+                    </div>
+                </section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nobis voluptas deleniti eos modi reiciendis dolores quis molestiae ducimus cum harum nulla debitis incidunt, nisi unde est in deserunt molestias ipsum nesciunt distinctio? Voluptatum quidem sit ea porro, repellat beatae commodi asperiores similique. Tempora itaque accusamus laboriosam ipsa odio eius repellendus harum eos mollitia hic. Vitae aliquam, ad enim quia adipisci nulla in obcaecati neque amet eveniet natus soluta animi quasi explicabo temporibus provident, id blanditiis saepe dolore eius! Labore sunt vero nostrum doloribus excepturi tempore temporibus nam. Neque voluptas odio officia quod sapiente laudantium cupiditate, unde amet cumque eos illo aspernatur perspiciatis, vitae expedita corporis eveniet reiciendis minus accusamus consequuntur assumenda totam exercitationem aut architecto. Voluptatem exercitationem voluptas, deleniti ullam aut dolor cum beatae ipsam velit voluptatibus doloribus odit facere minus natus aliquid qui et inventore corrupti autem animi optio quisquam nobis blanditiis cumque. Beatae corrupti error quia ducimus quaerat, perferendis numquam, libero molestiae excepturi fuga iste! Tempora quisquam, fugit ipsum doloribus cupiditate veritatis, voluptatum quis pariatur cum voluptas totam aperiam quo ad eius quos impedit explicabo perferendis maiores dolore! Accusantium nam eligendi cupiditate deserunt corporis repellendus nobis provident cumque et, rerum maxime velit minus autem, incidunt omnis obcaecati repudiandae earum sint! Distinctio tempora architecto facilis ut, deserunt dicta recusandae fuga illo accusantium possimus labore ullam eaque adipisci? Non atque, tempore odit placeat a ex reici
+                </p>
+                <div id="about"></div>
+
+                
+
+                <!-- Über mich -->
+                <section class="text-white">
+                    <!-- Hauptüberschrift -->
+                    <div class="text-8xl font-extrabold">
+                        <h1 class="hover-text-effect cursor-default">ABOUT</h1>
+                        <h2 class="hover-text-effect text-neutral-700 cursor-default">ME</h2>
+                    </div>
+                    
+                    <!-- Beschreibung -->
+                    <p class="text-2xl text-neutral-400 mt-8 mx-auto">
+                        <span class="font-extrabold">ICH</span> bin Alexander Merklinger, angehender Anwendungsentwickler mit Begeisterung für Software und Technologie. Seit September 2024 absolviere ich eine Umschulung zum Softwareentwickler.
+                    </p>    
+                    
+                    <p class="text-2xl text-neutral-400 mt-8 mx-auto">
+                        <span class="font-extrabold">LERNEN</span> bedeutet für mich, ständig neue Ideen und Konzepte zu entdecken – von der Theorie bis zur praktischen Anwendung in verschiedenen Bereichen.
+                    </p>
+
+                    <p class="text-2xl text-neutral-400 mt-8 mx-auto">
+                        <span class="font-extrabold">ENTWICKLUNG</span> durchdachter und effizienter Lösungen fasziniert mich besonders, weil sie den Alltag erleichtern und Abläufe optimieren.
+                    </p>
+                    
+                    <p class="text-2xl text-neutral-400 mt-8 mx-auto">
+                        <span class="font-extrabold">VERBESSERUNG</span> meine Fähigkeiten steht für mich an erster Stelle – ich stelle mich neuen Herausforderungen, entdecke neue Methoden und optimiere kontinuierlich meine Herangehensweise.                    
+                    </p>
+                </section>
+            </main>
+        </div>
+
+        <!-- Rechter leerer Bereich (20%) -->
+        <div class="col-span-2"></div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
