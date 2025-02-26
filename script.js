@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Tailwind-Konfiguration setzen
+    // Tailwind-Konfiguration
     if (typeof tailwind !== "undefined") {
         tailwind.config = {
             theme: {
@@ -99,35 +99,93 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
     });
-    // Neue Funktion für die Scroll-Animation der Balken
-    const skillBars = document.querySelectorAll(".skill-bar");
-    
-    // Präzise angepasste Werte für die Linien – kein zu viel / zu wenig
-    const skillLevels = [
-        "calc(66.66% + 0.5px)",  // 1. Linie (Basics)
-        "calc(100% - 0.25px)",  // 2. Linie (Gemeistert)
-        "calc(66.66% + 0.5px)", 
-        "calc(66.66% + 0.5px)", 
-        "calc(100% - 0.25px)",  
-        "calc(33.33% + 0.5px)"   // Mitte (Lernfähig)
-    ]; 
 
-    function checkScroll() {
+    // Skill-Balken-Animation
+    const technicalSkills = document.getElementById("technical-skills");
+    const softSkills = document.getElementById("soft-skills");
+    const skillBars = document.querySelectorAll(".skill-bar");
+    const softSkillBars = document.querySelectorAll(".skill-bar-soft");
+
+    const technicalLevels = ["80%", "70%", "85%", "75%", "90%", "80%", "70%", "65%"];
+    const softSkillLevels = ["90%", "85%", "80%", "75%", "85%", "70%", "100%", "50%"];
+
+    function animateSkillBars() {
         const windowHeight = window.innerHeight;
         const middlePoint = windowHeight / 2;
         const activationRange = 300;
 
         skillBars.forEach((bar, index) => {
             const barPosition = bar.parentElement.getBoundingClientRect().top;
-
             if (barPosition < middlePoint + activationRange && barPosition > middlePoint - activationRange) {
-                bar.style.width = skillLevels[index]; // Pixelgenaue Anpassung
+                bar.style.width = technicalLevels[index];
+            } else {
+                bar.style.width = "0%"; // Zurücksetzen, wenn nicht sichtbar
+            }
+        });
+
+        softSkillBars.forEach((bar, index) => {
+            const barPosition = bar.parentElement.getBoundingClientRect().top;
+            if (barPosition < middlePoint + activationRange && barPosition > middlePoint - activationRange) {
+                bar.style.width = softSkillLevels[index];
             } else {
                 bar.style.width = "0%";
             }
         });
     }
 
-        window.addEventListener("scroll", checkScroll);
-        checkScroll(); // Falls Balken direkt sichtbar ist
+    // Dynamische Legende mit Hover-Effekt
+    const techDescriptions = document.querySelectorAll(".tech-desc");
+    const socialDescriptions = document.querySelectorAll(".social-desc");
+
+    function updateLegend(type) {
+        if (type === "tech") {
+            techDescriptions.forEach(desc => desc.classList.remove("hidden"));
+            socialDescriptions.forEach(desc => desc.classList.add("hidden"));
+        } else {
+            socialDescriptions.forEach(desc => desc.classList.remove("hidden"));
+            techDescriptions.forEach(desc => desc.classList.add("hidden"));
+        }
+    }
+
+    // Scroll-Event für die Animation & Legenden-Wechsel
+    window.addEventListener("scroll", () => {
+        animateSkillBars();
+
+        if (!technicalSkills.classList.contains("hidden")) {
+            updateLegend("tech");
+        } else {
+            updateLegend("social");
+        }
+    });
+
+    // Toggle für Tech & Soft Skills
+    const toggleButton = document.getElementById("toggle-skills");
+    let showingSoftSkills = false;
+
+    toggleButton.addEventListener("click", function () {
+        showingSoftSkills = !showingSoftSkills;
+
+        // Wechsel der Diagramme
+        technicalSkills.classList.toggle("hidden");
+        softSkills.classList.toggle("hidden");
+
+        // Wechsel der Legenden-Texte
+        if (showingSoftSkills) {
+            toggleButton.textContent = "Technische Skills anzeigen";
+            updateLegend("social");
+            toggleButton.classList.remove("hover:from-blue-600", "hover:via-green-600", "hover:to-yellow-600");
+            toggleButton.classList.add("hover:from-pink-700", "hover:via-red-700", "hover:to-orange-500");
+        } else {
+            toggleButton.textContent = "Soft Skills anzeigen";
+            updateLegend("tech");
+            toggleButton.classList.remove("hover:from-pink-700", "hover:via-red-700", "hover:to-orange-500");
+            toggleButton.classList.add("hover:from-blue-600", "hover:via-green-600", "hover:to-yellow-600");
+        }
+
+        // Stelle sicher, dass Balken erneut animieren
+        animateSkillBars();
+    });
+
+    // Starte Animation direkt beim Laden
+    animateSkillBars();
 });
