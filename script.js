@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ["Outfit", "serif"]
+                        sans: ["Outfit", "serif"],
                     },
                     colors: {
                         primary: "#db6e02",
@@ -185,7 +185,5 @@ document.addEventListener("DOMContentLoaded", function () {
         // Stelle sicher, dass Balken erneut animieren
         animateSkillBars();
     });
-
-    // Starte Animation direkt beim Laden
     animateSkillBars();
 });
