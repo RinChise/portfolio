@@ -12,8 +12,7 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"></head>
 <body id="home" class="bg-dark text-white font-sans">
     
     <!-- Navbar (Fixiert) -->
@@ -117,24 +116,36 @@
                     <!-- Beschreibung -->
                     <p class="text-2xl text-neutral-400 mt-8 mx-auto leading-relaxed">
                         Ich bin auf dem Weg, ein erfahrener Softwareentwickler zu werden, und lerne täglich Neues dazu. Meine Leidenschaft gilt der Entwicklung von intuitiven und funktionalen Anwendungen, die Nutzer begeistern und Prozesse optimieren.</p>
-
+                    <p id="skills" ></p>
                         
                 </section>
-                <div id="projects"></div>
                 
                 <!-- Skills -->
-                <section id="skills" class="text-white relative">
+                <section class="text-white relative">
                     <div class="text-8xl font-extrabold">
                         <h1 class="hover-text-effect cursor-default">SKILLS</h1>
                         <h2 class="hover-text-effect text-neutral-700 cursor-default">FÄHIGKEITEN</h2>
                     </div>
                 
-                    <!-- Toggle Button with New Hover Effect -->
-                    <div class="mt-12 flex justify-center">
-                        <button id="toggle-skills"
-                            class="bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-250 hover:bg-gradient-to-r hover:from-blue-600 hover:via-green-600 hover:to-yellow-600 hover:text-white focus:outline-none transform hover:-translate-y-1 active:translate-y-0 active:shadow-md">
-                            Soft Skills anzeigen
-                        </button>
+                    <!-- Skill-Slider -->
+                    <div class="mt-12 flex justify-center items-center space-x-4">
+                        <!-- Tech-Skills Label -->
+                        <span id="tech-label" class="bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text font-semibold transition-all duration-300">
+                            Tech-Skills
+                        </span>
+                    
+                        <!-- Slider -->
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="toggle-skills" class="sr-only">
+                            <div id="slider-bg" class="w-24 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full transition-all duration-300 flex items-center px-1">
+                                <div id="slider-circle" class="w-10 h-10 bg-white rounded-full shadow-md transition-all duration-300"></div>
+                            </div>
+                        </label>
+                    
+                        <!-- Soft-Skills Label -->
+                        <span id="soft-label" class="text-white font-semibold transition-all duration-300">
+                            Soft-Skills
+                        </span>
                     </div>
                 
                     <!-- Skill Chart Container (With Separating Lines) -->
@@ -189,14 +200,14 @@
                                 </div>
 
                                 <div>
-                                    <p class="text-lg font-bold">Git</p>
+                                    <p class="text-lg font-bold">Linux/Bash</p>
                                     <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
                                         <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <p class="text-lg font-bold">Linux/Bash</p>
+                                    <p class="text-lg font-bold">Git</p>
                                     <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
                                         <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
                                     </div>
@@ -248,7 +259,7 @@
                                         <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
                                     </div>
                                 </div>
-                                
+
                                 <div>
                                     <p class="text-lg font-bold">Empathie</p>
                                     <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
@@ -267,31 +278,50 @@
                     </div>
                 
                     <!-- Level Legend -->
-                    <div class="mt-8 flex justify-between text-lg text-gray-400 opacity-50 w-full">
+                    <div class="mt-8 flex justify-between text-lg text-gray-200 opacity-50 w-full">
+                        <!-- Grundlagen -->
                         <span class="w-1/3 text-center relative group">
                             <span class="cursor-pointer underline">Grundlagen</span>
-                            <span class="absolute left-1/2 -translate-x-1/2 top-6 bg-neutral-800 text-white text-sm px-3 py-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="tech-desc">Kann einfache Aufgaben lösen, braucht manchmal Unterstützung.</span>
-                                <span class="social-desc hidden">Versteht grundlegende soziale Dynamiken, arbeitet mit anderen zusammen.</span>
+                            <!-- Info-Icon immer sichtbar und rechts vom Text -->
+                            <i data-lucide="info" class="ml-2 text-primary inline-block"></i>
+                            <!-- Tooltip erscheint von oben nach unten -->
+                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
+                                Hat Basics verstanden und kann einfache Aufgaben lösen.
+                            </span>
+                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
+                                Kommuniziert klar und arbeitet zuverlässig im Team.
                             </span>
                         </span>
                     
+                        <!-- Fortgeschritten -->
                         <span class="w-1/3 text-center relative group">
                             <span class="cursor-pointer underline">Fortgeschritten</span>
-                            <span class="absolute left-1/2 -translate-x-1/2 top-6 bg-neutral-800 text-white text-sm px-3 py-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="tech-desc">Kann komplexere Probleme selbstständig lösen, setzt Best Practices ein.</span>
-                                <span class="social-desc hidden">Kommuniziert souverän im Team, kann konstruktives Feedback geben.</span>
+                            <!-- Info-Icon immer sichtbar und rechts vom Text -->
+                            <i data-lucide="info" class="ml-2 text-primary inline-block"></i>
+                            <!-- Tooltip erscheint von oben nach unten -->
+                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
+                                Kann komplexere Probleme mit Hilfe von Dokumentationen und Recherche lösen.
+                            </span>
+                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
+                                Kann Herausforderungen strukturiert lösen und gibt konstruktives Feedback.
                             </span>
                         </span>
                     
+                        <!-- Experte -->
                         <span class="w-1/3 text-center relative group">
                             <span class="cursor-pointer underline">Experte</span>
-                            <span class="absolute left-1/2 -translate-x-1/2 top-6 bg-neutral-800 text-white text-sm px-3 py-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                                <span class="tech-desc">Schreibt sauberen Code, optimiert Systeme, kann andere coachen.</span>
-                                <span class="social-desc hidden">Führt Teams, löst Konflikte, gibt Wissen weiter.</span>
+                            <!-- Info-Icon immer sichtbar und rechts vom Text -->
+                            <i data-lucide="info" class="ml-2 text-primary inline-block"></i>
+                            <!-- Tooltip erscheint von oben nach unten -->
+                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
+                                Besitzt tiefes Verständnis, kann flexibel reagieren und Wissen gezielt weitergeben.
+                            </span>
+                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
+                                Besitzt ausgeprägte Sozialkompetenz, übernimmt Verantwortung und fördert Zusammenarbeit.
                             </span>
                         </span>
                     </div>
+                    <p id="projects" ></p>
                 </section>
                 
                 <!-- Projekte -->
@@ -301,29 +331,101 @@
                         <h1 class="hover-text-effect cursor-default">MEINE</h1>
                         <h2 class="hover-text-effect text-neutral-700 cursor-default">PROJEKTE</h2>
                     </div>
-
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 mt-8 gap-6">
-                        <div class="bg-white text-black p-5 rounded-lg shadow-md">
-                            <img src="projekt1.jpg" alt="Projekt 1" class="rounded-lg w-full mb-4">
-                            <h3 class="text-xl font-bold">Projekt 1</h3>
-                            <p class="text-gray-600">Kurzbeschreibung...</p>
+                
+                    <!-- Projekt-Grid -->
+                    <div class="mt-8 space-y-6">
+                        <!-- Projekt Snake -->
+                        <a href="https://github.com/rinchise/gamesnake" target="_blank" 
+                        class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                               transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                               w-full max-w-2xl mx-auto h-42 flex">
+                         <!-- Bild-Container -->
+                         <div class="w-1/3 h-full flex items-center justify-center p-2">
+                            <img src="snake.jpeg" alt="Projekt 1" class="h-4/5 w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg group-hover:transition-all group-hover:duration-700">
                         </div>
-                        <div class="bg-white text-black p-5 rounded-lg shadow-md">
-                            <img src="projekt2.jpg" alt="Projekt 2" class="rounded-lg w-full mb-4">
-                            <h3 class="text-xl font-bold">Projekt 2</h3>
-                            <p class="text-gray-600">Kurzbeschreibung...</p>
-                        </div>
+                         <!-- Beschreibung -->
+                         <div class="w-2/3 p-5 pr-10 flex flex-col justify-center">
+                             <h3 class="text-2xl font-bold text-primary">Snake</h3>
+                             <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                 Ein klassisches Snake-Spiel in Python mit Singleplayer- & lokalem 2-Spieler-Multiplayer. Ein Score-System mit Datenbank speichert Highscores.
+                             </p>
+                         </div>
+                         <!-- Pfeil unten rechts -->
+                         <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                             <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                         </div>
+                     </a>
+                
+                        <!-- Projekt Taschenrechner -->
+                        <a href="https://github.com/rinchise/calculator" target="_blank" 
+                           class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                                  transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                                  w-full max-w-2xl mx-auto h-42 flex">
+                            <!-- Bild -->
+                            <div class="w-1/3 h-full flex items-center justify-center p-2">
+                                <img src="calculator.jpeg" alt="Projekt 1" class="h-4/5 w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg group-hover:transition-all group-hover:duration-700">
+                            </div>
+                            <!-- Beschreibung -->
+                            <div class="w-2/3 p-5 pr-10 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-primary">Taschenrechner</h3>
+                                <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                    Ein einfacher Taschenrechner mit grafischer Benutzeroberfläche, entwickelt mit Java Swing. 
+                                </p>
+                            </div>
+                            <!-- Pfeil unten rechts -->
+                            <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                
+                        <!-- Projekt Tic Tac Toe -->
+                        <a href="https://github.com/rinchise/tictactoe" target="_blank" 
+                           class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                                  transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                                  w-full max-w-2xl mx-auto h-42 flex">
+                            <!-- Bild -->
+                            <div class="w-1/3 h-full flex items-center justify-center p-2">
+                                <img src="tictactoe.jpeg" alt="Projekt 1" class="h-4/5 w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg group-hover:transition-all group-hover:duration-700">
+                            </div>
+                            <!-- Beschreibung -->
+                            <div class="w-2/3 p-5 pr-10 flex flex-col justify-center">
+                                <h3 class="text-2xl font-bold text-primary">Tic Tac Toe</h3>
+                                <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                    Ein klassisches Tic-Tac-Toe-Spiel als Konsolenanwendung in Java. Spieler wählen Namen und setzen abwechselnd ihre Zeichen, indem sie Zeile und Spalte eingeben.
+                                </p>
+                            </div>
+                            <!-- Pfeil unten rechts -->
+                            <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                
+                        <!-- Projekt Portfolio -->
+                        <a href="https://github.com/rinchise/projekt1" target="_blank" 
+                        class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                               transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                               w-full max-w-2xl mx-auto h-42 flex">
+                         <!-- Bild -->
+                         <div class="w-1/3 h-full flex items-center justify-center p-2">
+                             <img src="portfolio.jpeg" alt="Projekt 1" class="h-4/5 w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg group-hover:transition-all group-hover:duration-700">
+                         </div>
+                         <!-- Beschreibung -->
+                         <div class="w-2/3 p-5 pr-10 flex flex-col justify-center">
+                             <h3 class="text-2xl font-bold text-primary">Portfolio</h3>
+                             <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                 Meine Portfolio-Website, erstellt mit HTML, Tailwind CSS und JavaScript. Präsentiert meine Projekte, Fähigkeiten und Kontaktmöglichkeiten.
+                             </p>
+                         </div>
+                            <!-- Pfeil unten rechts -->
+                            <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
                     </div>
                 </section>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex nobis voluptas deleniti eos modi reiciendis dolores quis molestiae ducimus cum harum nulla debitis incidunt, nisi unde est in deserunt molestias ipsum nesciunt distinctio? Voluptatum quidem sit ea porro, repellat beatae commodi asperiores similique. Tempora itaque accusamus laboriosam ipsa odio eius repellendus harum eos mollitia hic. Vitae aliquam, ad enim quia adipisci nulla in obcaecati neque amet eveniet natus soluta animi quasi explicabo temporibus provident, id blanditiis saepe dolore eius! Labore sunt vero nostrum doloribus excepturi tempore temporibus nam. Neque voluptas odio officia quod sapiente laudantium cupiditate, unde amet cumque eos illo aspernatur perspiciatis, vitae expedita corporis eveniet reiciendis minus accusamus consequuntur assumenda totam exercitationem aut architecto. Voluptatem exercitationem voluptas, deleniti ullam aut dolor cum beatae ipsam velit voluptatibus doloribus odit facere minus natus aliquid qui et inventore corrupti autem animi optio quisquam nobis blanditiis cumque. Beatae corrupti error quia ducimus quaerat, perferendis numquam, libero molestiae excepturi fuga iste! Tempora quisquam, fugit ipsum doloribus cupiditate veritatis, voluptatum quis pariatur cum voluptas totam aperiam quo ad eius quos impedit explicabo perferendis maiores dolore! Accusantium nam eligendi cupiditate deserunt corporis repellendus nobis provident cumque et, rerum maxime velit minus autem, incidunt omnis obcaecati repudiandae earum sint! Distinctio tempora architecto facilis ut, deserunt dicta recusandae fuga illo accusantium possimus labore ullam eaque adipisci? Non atque, tempore odit placeat a ex reici
-                </p>
-                <div id="about"></div>
-
-                
 
                 <!-- Über mich -->
-                <section class="text-white">
+                <section id="about" class="text-white">
                     <!-- Hauptüberschrift -->
                     <div class="text-8xl font-extrabold">
                         <h1 class="hover-text-effect cursor-default">ABOUT</h1>
@@ -332,19 +434,19 @@
                     
                     <!-- Beschreibung -->
                     <p class="text-2xl text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">A</span>ls angehender Entwickler strebe ich nach kreativen und effizienten Lösungen. Mein Ziel ist es, intuitive Anwendungen zu schaffen, die Menschen im Alltag unterstützen.
+                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">A</span>ls jemand, der sich ständig weiterentwickeln möchte, begeistere ich mich nicht nur für kreatives Problemlösen in der Softwareentwicklung, sondern auch für persönliche Fortschritte in anderen Bereichen meines Lebens.
                     </p>    
                     
                     <p class="text-2xl text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">L</span>ernen bedeutet für mich, ständig neue Ideen und Konzepte zu entdecken – von der Theorie bis zur praktischen Anwendung in verschiedenen Bereichen.
+                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">L</span>ernen bedeutet für mich, immer neue Wege zu entdecken – sei es durch das Entwickeln intuitiver Anwendungen, das Lesen inspirierender Bücher oder das Erarbeiten neuer Trainingsmethoden im Fitnessstudio.
                     </p>
 
                     <p class="text-2xl text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">E</span>ntwicklung durchdachter und effizienter Lösungen fasziniert mich besonders, weil sie den Alltag erleichtern und Abläufe optimieren.
+                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">E</span>ffizienz und Struktur faszinieren mich nicht nur beim Programmieren, sondern auch im Alltag. Ich liebe es, mich durch Sport herauszufordern, beim Gaming strategisch zu denken oder in spannenden Geschichten abzutauchen.
                     </p>
                     
                     <p class="text-2xl text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">X</span>trem motiviert stelle ich mich neuen Herausforderungen, entdecke innovative Methoden und optimiere kontinuierlich meine Herangehensweise.
+                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">X</span>treme Motivation treibt mich an. Ich stelle mich gerne neuen Herausforderungen, entdecke innovative Methoden und feile kontinuierlich an meinen Fähigkeiten – technisch wie persönlich.
                     </p>
                 </section>
             </main>

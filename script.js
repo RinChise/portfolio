@@ -19,10 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
                             "50%": { transform: "translateY(4px)" },
                             "70%": { transform: "translateY(-4px)" },
                             "100%": { transform: "translateY(0)" }
+                        },
+                        wiggleArrow: {
+                            "0%": { transform: "translateX(0)" },
+                            "50%": { transform: "translateX(5px)" },
+                            "100%": { transform: "translateX(0px)" }
                         }
                     },
                     animation: {
-                        bounceLetter: "bounceLetter 0.6s ease-in-out"
+                        bounceLetter: "bounceLetter 0.6s ease-in-out",
+                        wiggleArrow: "wiggleArrow 0.6s ease-in-out infinite"
                     }
                 }
             }
@@ -101,89 +107,88 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Skill-Balken-Animation
+    const toggleSlider = document.getElementById("toggle-skills");
+    const sliderBg = document.getElementById("slider-bg");
+    const sliderCircle = document.getElementById("slider-circle");
+    const techLabel = document.getElementById("tech-label");
+    const softLabel = document.getElementById("soft-label");
     const technicalSkills = document.getElementById("technical-skills");
     const softSkills = document.getElementById("soft-skills");
     const skillBars = document.querySelectorAll(".skill-bar");
     const softSkillBars = document.querySelectorAll(".skill-bar-soft");
 
-    const technicalLevels = ["80%", "70%", "85%", "75%", "90%", "80%", "70%", "65%"];
-    const softSkillLevels = ["90%", "85%", "80%", "75%", "85%", "70%", "100%", "50%"];
+    // Tooltips für Tech- und Soft-Skills
+    const tooltipsTech = document.querySelectorAll(".tooltip-tech");
+    const tooltipsSoft = document.querySelectorAll(".tooltip-soft");
+
+    const technicalLevels = ["80%", "70%", "85%", "75%", "90%", "80%", "70%", "100%"];
+    const softSkillLevels = ["90%", "85%", "80%", "75%", "85%", "70%", "100%", "90%"];
 
     function animateSkillBars() {
-        const windowHeight = window.innerHeight;
-        const middlePoint = windowHeight / 2;
-        const activationRange = 300;
-
         skillBars.forEach((bar, index) => {
-            const barPosition = bar.parentElement.getBoundingClientRect().top;
-            if (barPosition < middlePoint + activationRange && barPosition > middlePoint - activationRange) {
-                bar.style.width = technicalLevels[index];
-            } else {
-                bar.style.width = "0%"; // Zurücksetzen, wenn nicht sichtbar
-            }
+            bar.style.width = isElementInViewport(bar) ? technicalLevels[index] : "0%";
         });
 
         softSkillBars.forEach((bar, index) => {
-            const barPosition = bar.parentElement.getBoundingClientRect().top;
-            if (barPosition < middlePoint + activationRange && barPosition > middlePoint - activationRange) {
-                bar.style.width = softSkillLevels[index];
-            } else {
-                bar.style.width = "0%";
-            }
+            bar.style.width = isElementInViewport(bar) ? softSkillLevels[index] : "0%";
         });
     }
 
-    // Dynamische Legende mit Hover-Effekt
-    const techDescriptions = document.querySelectorAll(".tech-desc");
-    const socialDescriptions = document.querySelectorAll(".social-desc");
-
-    function updateLegend(type) {
-        if (type === "tech") {
-            techDescriptions.forEach(desc => desc.classList.remove("hidden"));
-            socialDescriptions.forEach(desc => desc.classList.add("hidden"));
-        } else {
-            socialDescriptions.forEach(desc => desc.classList.remove("hidden"));
-            techDescriptions.forEach(desc => desc.classList.add("hidden"));
-        }
+    function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top < window.innerHeight * 0.90 && 
+            rect.bottom > window.innerHeight * 0.10
+        );
     }
 
-    // Scroll-Event für die Animation & Legenden-Wechsel
-    window.addEventListener("scroll", () => {
-        animateSkillBars();
+    // Scroll-Event für die Animation
+    window.addEventListener("scroll", animateSkillBars);
+    window.addEventListener("resize", animateSkillBars);
+    animateSkillBars(); // Direkt nach dem Laden aufrufen
 
-        if (!technicalSkills.classList.contains("hidden")) {
-            updateLegend("tech");
-        } else {
-            updateLegend("social");
-        }
-    });
-
-    // Toggle für Tech & Soft Skills
-    const toggleButton = document.getElementById("toggle-skills");
+    // Toggle-Slider für Diagramme & Farben
     let showingSoftSkills = false;
+    toggleSlider.checked = showingSoftSkills;
+    updateUI(showingSoftSkills);
 
-    toggleButton.addEventListener("click", function () {
-        showingSoftSkills = !showingSoftSkills;
-
-        // Wechsel der Diagramme
-        technicalSkills.classList.toggle("hidden");
-        softSkills.classList.toggle("hidden");
-
-        // Wechsel der Legenden-Texte
-        if (showingSoftSkills) {
-            toggleButton.textContent = "Technische Skills anzeigen";
-            updateLegend("social");
-            toggleButton.classList.remove("hover:from-blue-600", "hover:via-green-600", "hover:to-yellow-600");
-            toggleButton.classList.add("hover:from-pink-700", "hover:via-red-700", "hover:to-orange-500");
-        } else {
-            toggleButton.textContent = "Soft Skills anzeigen";
-            updateLegend("tech");
-            toggleButton.classList.remove("hover:from-pink-700", "hover:via-red-700", "hover:to-orange-500");
-            toggleButton.classList.add("hover:from-blue-600", "hover:via-green-600", "hover:to-yellow-600");
-        }
-
-        // Stelle sicher, dass Balken erneut animieren
-        animateSkillBars();
+    toggleSlider.addEventListener("change", function () {
+        showingSoftSkills = toggleSlider.checked;
+        updateUI(showingSoftSkills);
+        animateSkillBars(); // Direkt updaten
     });
-    animateSkillBars();
+
+    function updateUI(state) {
+        // Skills umschalten
+        technicalSkills.classList.toggle("hidden", state);
+        softSkills.classList.toggle("hidden", !state);
+
+        // Tooltips umschalten
+        tooltipsTech.forEach(tooltip => tooltip.classList.toggle("hidden", state));
+        tooltipsSoft.forEach(tooltip => tooltip.classList.toggle("hidden", !state));
+
+        if (state) {
+            // Soft-Skills aktiv
+            sliderBg.classList.remove("from-orange-500", "to-red-600");
+            sliderBg.classList.add("from-blue-600", "to-green-500");
+            sliderCircle.classList.add("translate-x-12");
+
+            techLabel.classList.remove("bg-gradient-to-r", "from-orange-500", "to-red-600", "text-transparent", "bg-clip-text");
+            techLabel.classList.add("text-white");
+
+            softLabel.classList.remove("text-white");
+            softLabel.classList.add("bg-gradient-to-r", "from-blue-600", "to-green-500", "text-transparent", "bg-clip-text");
+        } else {
+            // Tech-Skills aktiv
+            sliderBg.classList.remove("from-blue-600", "to-green-500");
+            sliderBg.classList.add("from-orange-500", "to-red-600");
+            sliderCircle.classList.remove("translate-x-12");
+
+            softLabel.classList.remove("bg-gradient-to-r", "from-blue-600", "to-green-500", "text-transparent", "bg-clip-text");
+            softLabel.classList.add("text-white");
+
+            techLabel.classList.remove("text-white");
+            techLabel.classList.add("bg-gradient-to-r", "from-orange-500", "to-red-600", "text-transparent", "bg-clip-text");
+        }
+    }
 });
