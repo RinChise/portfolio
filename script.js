@@ -37,6 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Tailwind konnte nicht geladen werden.");
     }
 
+    const flipCard = document.getElementById("flip-card");
+    const profilePic = document.getElementById("profile-pic");
+    const profilePicAlt = document.getElementById("profile-pic-alt");
+
+    profilePic.addEventListener("click", function () {
+        flipCard.classList.toggle("[transform:rotateY(180deg)]");
+    });
+
+    profilePicAlt.addEventListener("click", function () {
+        flipCard.classList.toggle("[transform:rotateY(180deg)]");
+    });
+
     // Lucide Icons aktivieren
     if (typeof lucide !== "undefined") {
         lucide.createIcons();

@@ -59,47 +59,72 @@
 
         <!-- Linker leerer Bereich (20%) -->
         <div class="col-span-2"></div>
-
+    
         <!-- Mittlerer Bereich (60%) mit Inhalt -->
         <div class="col-span-8 flex gap-10 mt-28">
-
-            <!-- Visitenkarte (links innerhalb der Mitte) -->
-            <aside class="h-[650px] bg-white text-black p-10 rounded-2xl shadow-lg text-center sticky top-28 flex flex-col justify-between">
-                <img src="assets/me.jpeg" class="rounded-xl max-w-[280px] mb-8 mx-auto" alt="Alexander Merklinger">
-                <h2 class="text-3xl font-bold mb-5">Alexander Merklinger</h2>
-                <p class="text-xl text-gray-600 leading-relaxed">
-                    Angehender Entwickler<br>kreativ & detailverliebt
-                </p>
-
-                <!-- Social Icons -->
-                <div class="flex justify-center gap-4 mt-6">
-                    <a href="https://github.com/rinchise" target="_blank" class="relative group flex items-center justify-center w-9 h-9 rounded-md hover:bg-gray-200 transition duration-200 hover:-translate-y-1">
-                        <!-- Icon -->
-                        <i data-lucide="github" class="text-2xl text-primary stroke-[1.5]"></i>
-                
-                        <!-- Tooltip -->
-                        <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
-                            GitHub
-                        </span>
-                    </a>
-                    <a href="https://linkedin.com/in/deinusername" target="_blank" class="relative group flex items-center justify-center w-9 h-9 rounded-md hover:bg-gray-200 transition duration-200 hover:-translate-y-1">
-                        <!-- Icon-->
-                        <i data-lucide="linkedin" class="text-2xl text-primary stroke-[1.5]"></i>
-
-                        <!-- Tooltip -->
-                        <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
-                            LinkedIn
-                        </span>
-                    </a>
-                    <a href="https://twitter.com/deinusername" target="_blank" class="relative group flex items-center justify-center w-9 h-9 rounded-md hover:bg-gray-200 transition duration-200 hover:-translate-y-1">
-                        <!-- Icon -->
-                        <i data-lucide="mail" class="text-2xl text-primary stroke-[1.5]"></i>
+    
+            <!-- Visitenkarte -->
+            <aside id="card-container" class="relative h-[650px] w-[320px] sticky top-28 [perspective:1000px]">
+                <div class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]" id="flip-card">
+                    
+                    <!-- Vorderseite -->
+                    <div id="visitenkarte" class="absolute w-full h-full bg-white text-black p-10 rounded-2xl shadow-lg flex flex-col justify-between min-h-full transition-transform duration-700 [backface-visibility:hidden]">
                         
-                        <!-- Tooltip -->
-                        <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/70 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
-                            Kontakt
-                        </span>
-                    </a>
+                        <!-- Flexbox für perfekte Ausrichtung -->
+                        <div class="flex flex-col items-center flex-grow justify-start">
+                            <img id="profile-pic" src="assets/me.jpeg" alt="Alexander Merklinger"
+                                class="rounded-xl w-[280px] h-[300px] object-cover object-center mb-8 cursor-pointer transition-transform duration-300 hover:scale-105">
+                            
+                            <h2 class="text-3xl font-bold mb-5 text-center">Alexander Merklinger</h2>
+                            
+                            <!-- Beschreibung: Jetzt mit `h-[60px]` für feste Höhe -->
+                            <p class="text-xl text-gray-600 leading-relaxed text-center h-[60px] flex items-center justify-center">
+                                Angehender Entwickler<br>kreativ & detailverliebt
+                            </p>
+                        </div>
+        
+                        <!-- Social Icons mit Hover-Effekt -->
+                        <div id="social-icons" class="flex justify-center gap-4">
+                            <a href="https://github.com/rinchise" target="_blank" 
+                                class="relative group flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
+                                <i data-lucide="github" class="text-2xl text-primary stroke-[1.5]"></i>
+                                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                                    GitHub
+                                </span>
+                            </a>
+                            <a href="https://linkedin.com/in/deinusername" target="_blank" 
+                                class="relative group flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
+                                <i data-lucide="linkedin" class="text-2xl text-primary stroke-[1.5]"></i>
+                                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                                    LinkedIn
+                                </span>
+                            </a>
+                            <a href="mailto:deinemail@example.com" 
+                                class="relative group flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
+                                <i data-lucide="mail" class="text-2xl text-primary stroke-[1.5]"></i>
+                                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                                    Mail
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Rückseite (Jetzt mit exakter Position) -->
+                    <div id="visitenkarte-alt" class="absolute w-full h-full bg-white text-black p-10 rounded-2xl shadow-lg flex flex-col justify-between min-h-full transition-transform duration-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                        
+                        <!-- Flexbox für exakte Positionierung -->
+                        <div class="flex flex-col items-center flex-grow justify-start">
+                            <img id="profile-pic-alt" src="assets/cats.jpeg" alt="Alternate Picture"
+                                class="rounded-xl w-[280px] h-[300px] object-cover object-center mb-8 cursor-pointer transition-transform duration-300 hover:scale-105">
+                            
+                            <h2 class="text-3xl font-bold mb-5 text-center"><br>Mitarbeiter<br></h2>
+                            
+                            <!-- Beschreibung auf gleicher Höhe wie Vorderseite -->
+                            <p class="text-xl text-gray-600 leading-relaxed text-center h-[60px] flex items-center justify-center">
+                                Nala & Ivy
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </aside>
 
