@@ -36,17 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("Tailwind konnte nicht geladen werden.");
     }
-
+    
     const flipCard = document.getElementById("flip-card");
     const profilePic = document.getElementById("profile-pic");
     const profilePicAlt = document.getElementById("profile-pic-alt");
 
+    let isFlipped = false;
+
     profilePic.addEventListener("click", function () {
-        flipCard.classList.toggle("[transform:rotateY(180deg)]");
+        isFlipped = !isFlipped;
+        flipCard.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
     });
 
     profilePicAlt.addEventListener("click", function () {
-        flipCard.classList.toggle("[transform:rotateY(180deg)]");
+        isFlipped = !isFlipped;
+        flipCard.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
     });
 
     // Lucide Icons aktivieren
@@ -78,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let span = document.createElement("span");
                 span.textContent = letter;
 
-                // JEDER BUCHSTABE bekommt `inline-block`, um sicherzustellen, dass `M` sich bewegen kann
+                // JEDER BUCHSTABE bekommt inline-block, um sicherzustellen, dass M sich bewegen kann
                 span.classList.add(
                     "inline-block",
                     "transition-transform",
@@ -115,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 element.appendChild(document.createTextNode(" "));
             }
         });
-        
     });
 
     // Skill-Balken-Animation
