@@ -15,6 +15,17 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="AM Dev – Entwicklerportfolio">
+    <meta property="og:description" content="Schau dir meine Projekte als angehender Softwareentwickler an!">
+    <meta property="og:image" content="https://a-mkr.de/preview.jpg">
+    <meta property="og:url" content="https://a-mkr.de">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="description" content="Ich bin angehender Softwareentwickler und stelle meine Projekte auf dieser Webseite vor.">
+    <meta name="robots" content="index, follow">
 </head>
 <body id="home" class="bg-dark text-white font-sans">
     
@@ -71,7 +82,7 @@
              class="absolute w-full max-w-full sm:max-w-[320px] sm:w-[320px] h-[650px] sm:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full sm:min-h-full transition-transform duration-700 [backface-visibility:hidden]">
                  <div class="flex flex-col items-center">
                      <img id="profile-pic" src="assets/me.jpeg" alt="Alexander Merklinger"
-                         class="rounded-xl w-full max-w-[280px] h-auto object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
+                         class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
                      
                      <h2 class="text-3xl font-bold mb-4 text-center">Alexander Merklinger</h2>
                      
@@ -110,24 +121,23 @@
             
                     <!-- Rückseite -->
                     <div id="visitenkarte-back" 
-         class="absolute w-full max-w-full sm:max-w-[320px] sm:w-[320px] h-[650px] sm:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full transition-transform duration-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                        class="absolute w-full max-w-full sm:max-w-[320px] sm:w-[320px] h-[650px] sm:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full transition-transform duration-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                    <div class="flex flex-col items-center">
                        <img id="profile-pic-alt" src="assets/cats.jpeg" alt="Mitarbeiter"
-                           class="rounded-xl w-full max-w-[280px] h-auto object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
+                           class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
                        
-                       <h2 class="text-3xl font-bold mb-4 text-center">Mitarbeiter</h2>
-                       
+                       <h2 class="text-3xl sm:mt-2 font-bold mb-4 text-center">Mitarbeiter</h2>
+                       <div class="sm:w-10 sm:h-10"></div>
                        <p class="text-lg sm:text-xl text-gray-600 text-center leading-relaxed">
                            Nala & Ivy
                        </p>
                    </div>
-       
                </div>
               
             </aside>
     
             <!-- Hauptinhalt (Rechts auf großem Screen, unterhalb der Visitenkarte auf Handy) -->
-            <main class="flex-1 mt-28 space-y-32 order-2 sm:order-none p-4 rounded-lg">
+            <main class="flex-1 mt-24 space-y-32 order-2 sm:order-none p-4 rounded-lg">
                 
                 <!-- Home -->
                 <section class="text-white">
@@ -362,9 +372,10 @@
                                  w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
                          <!-- Bild-Container -->
                          <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                            <img src="assets/snake.jpeg" alt="snake" 
+                            <img src="assets/snake.png" alt="snake" 
                                  class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
                         </div>
+                        
                          <!-- Beschreibung -->
                          <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
                             <h3 class="text-2xl font-bold text-primary">Snake</h3>
@@ -385,7 +396,7 @@
                                  w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
                             <!-- Bild -->
                             <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                                <img src="assets/calculator.jpeg" alt="calculator" 
+                                <img src="assets/calculator.png" alt="calculator" 
                                      class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
                             </div>
                             <!-- Beschreibung -->
@@ -408,7 +419,7 @@
                                  w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
                             <!-- Bild -->
                             <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                                <img src="assets/tictactoe.jpeg" alt="tictactoe" 
+                                <img src="assets/tictactoe.png" alt="tictactoe" 
                                      class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
                             </div>
                             <!-- Beschreibung -->
@@ -431,7 +442,7 @@
                                  w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
                          <!-- Bild -->
                          <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                            <img src="assets/portfolio.jpeg" alt="portfolio" 
+                            <img src="assets/portfolio.png" alt="portfolio" 
                                  class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
                         </div>
                          <!-- Beschreibung -->
