@@ -59,7 +59,7 @@
 
     <!-- Hauptcontainer mit Grid (3-Spalten-Layout) -->
     <div class="w-full sm:max-w-[60%] sm:w-[60%] sm:mx-auto px-4 sm:px-10 h-auto">
-        <div class="flex flex-col sm:grid sm:grid-cols-[320px_auto] gap-8 relative">
+        <div class="flex flex-col sm:grid sm:grid-cols-[320px_auto] gap-16 relative">
             <!-- Visitenkarte (Sticky auf Desktop, oben auf Smartphone) -->
             <aside id="card-container" 
        class="order-1 sm:order-none w-full max-w-full sm:max-w-[320px] sm:w-[320px] min-h-[650px] sm:h-auto sm:max-h-[650px] sm:sticky sm:top-28 mx-auto sm:mx-0 mb-8 sm:mb-0 p-4 rounded-lg"> 
@@ -127,7 +127,7 @@
             </aside>
     
             <!-- Hauptinhalt (Rechts auf großem Screen, unterhalb der Visitenkarte auf Handy) -->
-            <main class="flex-1 space-y-16 order-2 sm:order-none p-4 rounded-lg z-0">
+            <main class="flex-1 mt-28 space-y-32 order-2 sm:order-none p-4 rounded-lg">
                 
                 <!-- Home -->
                 <section class="text-white">
@@ -138,6 +138,7 @@
                     <p class="text-2xl text-neutral-400 mt-8 leading-relaxed">
                         Ich bin auf dem Weg, ein erfahrener Softwareentwickler zu werden, und lerne täglich Neues dazu.
                     </p>
+                    <p id="skills"></p>
                 </section>
                 
                 <!-- Skills -->
@@ -451,7 +452,7 @@
                 <!-- About Me -->
                 <section id="about" class="text-white">
                     <!-- Hauptüberschrift -->
-                    <div class="text-5xl sm:text-8xl font-extrabold">
+                    <div class="text-5xl sm:text-7xl font-extrabold">
                         <h1 class="hover-text-effect cursor-default">ABOUT</h1>
                         <h2 class="hover-text-effect text-neutral-700 cursor-default">ME</h2>
                     </div>
