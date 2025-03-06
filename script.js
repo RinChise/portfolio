@@ -136,8 +136,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const tooltipsTech = document.querySelectorAll(".tooltip-tech");
     const tooltipsSoft = document.querySelectorAll(".tooltip-soft");
 
-    const technicalLevels = ["80%", "70%", "85%", "75%", "90%", "80%", "70%", "100%"];
-    const softSkillLevels = ["90%", "85%", "80%", "75%", "85%", "70%", "100%", "90%"];
+    const technicalLevels = ["44%", "72%", "40%", "15%", "70%", "60%", "27%", "25%"];
+    const softSkillLevels = ["82%", "84%", "50%", "85%", "65%", "60%", "80%", "95%"];
 
     function animateSkillBars() {
         skillBars.forEach((bar, index) => {

@@ -25,10 +25,12 @@
     <meta property="og:image:height" content="630">
 
     <meta name="description" content="Ich bin angehender Softwareentwickler und stelle meine Projekte auf dieser Webseite vor.">
+    <meta name="keywords" content="mkr, a-mkr, a-mkr.de, Alexander Merklinger, Softwareentwicklung, Entwickler, Portfolio, Projekte, Praktikum, Umschulung, Ausbildung">
+    <meta name="author" content="Alexander Merklinger">
     <meta name="robots" content="index, follow">
 </head>
-<body id="home" class="bg-dark text-white font-sans">
-    
+<body class="bg-dark text-white font-sans">
+
     <!-- Navbar (Fixiert) -->
     <header class="hidden sm:flex fixed top-5 left-1/2 -translate-x-1/2 w-[224px] bg-panel text-white rounded-xl shadow-lg py-3 px-6 backdrop-blur-md z-50 hover:scale-105 transition-transform duration-200 ease-out">
         <nav class="flex justify-center gap-7">
@@ -67,7 +69,6 @@
         </nav>
     </header>
     
-
     <!-- Hauptcontainer mit Grid (3-Spalten-Layout) -->
     <div class="w-full sm:max-w-[60%] sm:w-[60%] sm:mx-auto px-4 sm:px-10 h-auto">
         <div class="flex flex-col sm:grid sm:grid-cols-[320px_auto] gap-16 relative">
@@ -101,7 +102,7 @@
                                 </span>
                             </a>
                             
-                            <a href="https://linkedin.com/in/deinusername" target="_blank" 
+                            <a href="https://linkedin.com/in/alexander-merklinger" target="_blank" 
                                class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
                                 <i data-lucide="linkedin" class="text-2xl text-primary stroke-[1.5]"></i>
                                 <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
@@ -109,7 +110,7 @@
                                 </span>
                             </a>
     
-                            <a href="mailto:alex@a-mkr.de" 
+                            <a href="mailto:a.merklinger@a-mkr.de" 
                                class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
                                 <i data-lucide="mail" class="text-2xl text-primary stroke-[1.5]"></i>
                                 <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
@@ -122,32 +123,35 @@
                     <!-- Rückseite -->
                     <div id="visitenkarte-back" 
                         class="absolute w-full max-w-full sm:max-w-[320px] sm:w-[320px] h-[650px] sm:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full transition-transform duration-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                   <div class="flex flex-col items-center">
+                    <div class="flex flex-col items-center">
                        <img id="profile-pic-alt" src="assets/cats.jpeg" alt="Mitarbeiter"
                            class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
                        
-                       <h2 class="text-3xl sm:mt-2 font-bold mb-4 text-center">Mitarbeiter</h2>
-                       <div class="sm:w-10 sm:h-10"></div>
+                       <h2 class="text-3xl sm:mt-2 font-bold mb-12 sm:mb-4 text-center leading-none">
+                        Nala
+                        <br><span class="text-lg sm:text-xl leading-none">&</span><br> 
+                        Ivy</h2>
+                       <div class="sm:w-10 sm:h-5"></div>
                        <p class="text-lg sm:text-xl text-gray-600 text-center leading-relaxed">
-                           Nala & Ivy
+                           Mitarbeiter
                        </p>
                    </div>
                </div>
-              
             </aside>
-    
+            
+
             <!-- Hauptinhalt (Rechts auf großem Screen, unterhalb der Visitenkarte auf Handy) -->
-            <main class="flex-1 mt-24 space-y-32 order-2 sm:order-none p-4 rounded-lg">
-                
+            <main class="flex-1 mt-0 sm:mt-0 order-2 sm:order-none p-4 rounded-lg">
+                <div id="home"></div>
                 <!-- Home -->
-                <section class="text-white">
+                <div class="space-y-32"> 
+                <section class="text-white sm:mt-32">
                     <div class="text-5xl sm:text-8xl font-extrabold">
                         <h1 class="hover-text-effect cursor-default">SOFTWARE</h1>
                         <h2 class="hover-text-effect text-neutral-700 cursor-default">ENTWICKLER</h2>
                     </div>
                     <p class="text-2xl text-neutral-400 mt-8 leading-relaxed">
-                        Ich bin auf dem Weg, ein erfahrener Softwareentwickler zu werden, und lerne täglich Neues dazu.
-                    </p>
+                        Ich befinde mich in einer Umschulung zum Softwareentwickler und wachse täglich an neuen Herausforderungen – denn im Code wie im Leben gilt: Entweder es läuft, oder ich debugge!                    </p>
                     <p id="skills"></p>
                 </section>
                 
@@ -217,7 +221,7 @@
                                 </div>
 
                                 <div>
-                                    <p class="text-lg font-bold">HTML/CSS</p>
+                                    <p class="text-lg font-bold">HTML</p>
                                     <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
                                         <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
                                     </div>
@@ -474,7 +478,7 @@
                     </p>    
                     
                     <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">L</span>ernen bedeutet für mich, immer neue Wege zu entdecken – sei es durch das Entwickeln intuitiver Anwendungen, das Lesen inspirierender Bücher oder das Erarbeiten neuer Trainingsmethoden im Fitnessstudio.
+                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">L</span>ernen bedeutet für mich, immer neue Wege zu entdecken – sei es durch das Entwickeln durchdachter Anwendungen, das Lesen von Büchern oder das Erarbeiten neuer Trainingsmethoden im Fitnessstudio.
                     </p>
 
                     <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
@@ -485,6 +489,7 @@
                         <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">X</span>treme Motivation treibt mich an. Ich stelle mich gerne neuen Herausforderungen, entdecke innovative Methoden und feile kontinuierlich an meinen Fähigkeiten – technisch wie persönlich.
                     </p>
                 </section>
+                </div>
             </main>
         </div>
     </div>    
