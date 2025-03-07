@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de" class="overscroll-none scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,475 +25,573 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
-    <meta name="description" content="Ich bin angehender Softwareentwickler und stelle meine Projekte auf dieser Webseite vor.">
-    <meta name="keywords" content="mkr, a-mkr, a-mkr.de, Alexander Merklinger, Softwareentwicklung, Entwickler, Portfolio, Projekte, Praktikum, Umschulung, Ausbildung">
+    <meta name="description"
+        content="Ich bin angehender Softwareentwickler und stelle meine Projekte auf dieser Webseite vor.">
+    <meta name="keywords"
+        content="mkr, a-mkr, a-mkr.de, Alexander Merklinger, Softwareentwicklung, Entwickler, Portfolio, Projekte, Praktikum, Umschulung, Ausbildung">
     <meta name="author" content="Alexander Merklinger">
     <meta name="robots" content="index, follow">
 </head>
-<body class="bg-dark text-white font-sans">
 
+<body class="bg-dark text-white font-sans">
     <!-- Navbar (Fixiert) -->
-    <header class="hidden sm:flex fixed top-5 left-1/2 -translate-x-1/2 w-[224px] bg-panel text-white rounded-xl shadow-lg py-3 px-6 backdrop-blur-md z-50 hover:scale-105 transition-transform duration-200 ease-out">
+    <header
+        class="navbar hidden sm:flex fixed top-5 left-1/2 -translate-x-1/2 w-[224px] bg-panel text-white rounded-xl shadow-lg py-3 px-6 backdrop-blur-md z-50 hover:scale-105 transition-transform duration-300 ease-out"
+        id="navbar">
         <nav class="flex justify-center gap-7">
             <!-- Home -->
-            <a href="#home" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
-                <i data-lucide="home" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
+            <a href="#home"
+                class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="home"
+                    class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
                 <!-- Tooltip -->
-                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                <span
+                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
                     Home
                 </span>
             </a>
             <!-- Skills -->
-            <a href="#skills" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
-                <i data-lucide="cog" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200 "></i>
+            <a href="#skills"
+                class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="cog"
+                    class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200 "></i>
                 <!-- Tooltip -->
-                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                <span
+                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
                     Skills
                 </span>
             </a>
             <!-- Projekte -->
-            <a href="#projects" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
-                <i data-lucide="folder" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
+            <a href="#projects"
+                class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="folder"
+                    class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
                 <!-- Tooltip -->
-                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                <span
+                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
                     Projekte
                 </span>
             </a>
             <!-- About -->
-            <a href="#about" class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
-                <i data-lucide="user" class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
+            <a href="#about"
+                class="relative group flex flex-col items-center transition-transform duration-200 hover:-translate-y-1">
+                <i data-lucide="user"
+                    class="w-6 h-6 hover:text-primary stroke-[1.5] transition-colors duration-200"></i>
                 <!-- Tooltip -->
-                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none whitespace-nowrap">
+                <span
+                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none whitespace-nowrap">
                     About Me
                 </span>
             </a>
         </nav>
     </header>
-    
-    <!-- Hauptcontainer mit Grid (3-Spalten-Layout) -->
-    <div class="w-full sm:max-w-[60%] sm:w-[60%] sm:mx-auto px-4 sm:px-10 h-auto">
-        <div class="flex flex-col sm:grid sm:grid-cols-[320px_auto] gap-16 relative">
-            <!-- Visitenkarte (Sticky auf Desktop, oben auf Smartphone) -->
-            <aside id="card-container" 
-                    class="order-1 sm:order-none w-full max-w-full sm:max-w-[320px] sm:w-[320px] min-h-[650px] sm:h-auto sm:max-h-[650px] sm:sticky sm:top-28 mx-auto sm:mx-0 mb-8 sm:mb-0 p-4 rounded-lg"> 
 
-        <div class="relative w-full h-auto sm:h-full transition-transform duration-700 [transform-style:preserve-3d]" id="flip-card">
-             
-             <!-- Vorderseite -->
-             <div id="visitenkarte" 
-             class="absolute w-full max-w-full sm:max-w-[320px] sm:w-[320px] h-[650px] sm:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full sm:min-h-full transition-transform duration-700 [backface-visibility:hidden]">
-                 <div class="flex flex-col items-center">
-                     <img id="profile-pic" src="assets/me.jpeg" alt="Alexander Merklinger"
-                         class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
-                     
-                     <h2 class="text-3xl font-bold mb-4 text-center">Alexander Merklinger</h2>
-                     
-                     <p class="text-lg sm:text-xl text-gray-600 text-center leading-relaxed">
-                         Angehender Entwickler<br>kreativ & detailverliebt
-                     </p>
-                 </div>
-            
+    <!-- Hauptcontainer mit Grid (3-Spalten-Layout) -->
+    <div class="w-full sm:max-w-[744px] md:max-w-[85%] lg:max-w-[1100px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 h-auto">
+        <div
+            class="flex flex-col md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[320px_1fr] md:gap-12 lg:gap-16 relative">
+
+            <!-- Card Container - with fixes for proper flip animation -->
+            <aside id="card-container"
+                class="order-1 md:order-none w-full sm:mx-auto sm:w-[744px] md:w-full max-w-full min-h-[650px] md:h-auto md:max-h-[650px] md:sticky md:top-28 mb-8 md:mb-0 p-4 rounded-lg">
+
+                <div class="relative w-full h-auto md:h-full transition-transform duration-700 [transform-style:preserve-3d]"
+                    id="flip-card">
+
+                    <!-- Vorderseite -->
+                    <div id="visitenkarte"
+                        class="absolute w-full max-w-full md:max-w-[320px] md:w-[320px] h-[650px] md:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full md:min-h-full transition-transform duration-700 [backface-visibility:hidden]">
+                        <div class="flex flex-col items-center">
+                            <img id="profile-pic" src="assets/me.jpeg" alt="Alexander Merklinger"
+                                class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
+
+                            <h2 class="text-3xl font-bold mb-4 text-center">Alexander Merklinger</h2>
+
+                            <p class="text-lg sm:text-xl text-gray-600 text-center leading-relaxed">
+                                Angehender Entwickler<br>kreativ & detailverliebt
+                            </p>
+                        </div>
+
                         <!-- Social Icons -->
                         <div class="flex justify-center gap-4 mt-6">
-                            <a href="https://github.com/rinchise" target="_blank" 
-                               class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
+                            <a href="https://github.com/rinchise" target="_blank"
+                                class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
                                 <i data-lucide="github" class="text-2xl text-primary stroke-[1.5]"></i>
-                                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
                                     GitHub
                                 </span>
                             </a>
-                            
-                            <a href="https://linkedin.com/in/alexander-merklinger" target="_blank" 
-                               class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
+
+                            <a href="https://linkedin.com/in/alexander-merklinger" target="_blank"
+                                class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
                                 <i data-lucide="linkedin" class="text-2xl text-primary stroke-[1.5]"></i>
-                                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
                                     LinkedIn
                                 </span>
                             </a>
-    
-                            <a href="mailto:a.merklinger@a-mkr.de" 
-                               class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
+
+                            <a href="mailto:a.merklinger@a-mkr.de"
+                                class="group relative flex items-center justify-center w-10 h-10 rounded-md transition duration-200 hover:bg-gray-200 hover:-translate-y-1">
                                 <i data-lucide="mail" class="text-2xl text-primary stroke-[1.5]"></i>
-                                <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/80 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none">
                                     Email
                                 </span>
                             </a>
                         </div>
                     </div>
-            
+
                     <!-- Rückseite -->
-                    <div id="visitenkarte-back" 
-                        class="absolute w-full max-w-full sm:max-w-[320px] sm:w-[320px] h-[650px] sm:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full transition-transform duration-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <div class="flex flex-col items-center">
-                       <img id="profile-pic-alt" src="assets/cats.jpeg" alt="Mitarbeiter"
-                           class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
-                       
-                       <h2 class="text-3xl sm:mt-2 font-bold mb-12 sm:mb-4 text-center leading-none">
-                        Nala
-                        <br><span class="text-lg sm:text-xl leading-none">&</span><br> 
-                        Ivy</h2>
-                       <div class="sm:w-10 sm:h-5"></div>
-                       <p class="text-lg sm:text-xl text-gray-600 text-center leading-relaxed">
-                           Mitarbeiter
-                       </p>
-                   </div>
-               </div>
+                    <div id="visitenkarte-back"
+                        class="absolute w-full max-w-full md:max-w-[320px] md:w-[320px] h-[650px] md:h-[650px] bg-white text-black p-8 rounded-2xl shadow-lg flex flex-col min-h-full transition-transform duration-700 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                        <div class="flex flex-col items-center">
+                            <img id="profile-pic-alt" src="assets/cats.jpeg" alt="Mitarbeiter"
+                                class="rounded-xl w-full max-w-[280px] h-[350px] object-cover mb-6 cursor-pointer hover:scale-105 transition-transform duration-300">
+
+                            <h2 class="text-3xl sm:mt-2 font-bold mb-12 sm:mb-4 text-center leading-none">
+                                Nala
+                                <br><span class="text-lg sm:text-xl leading-none">&</span><br>
+                                Ivy
+                            </h2>
+                            <div class="sm:w-10 sm:h-5"></div>
+                            <p class="text-lg sm:text-xl text-gray-600 text-center leading-relaxed">
+                                Mitarbeiter
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </aside>
-            
 
             <!-- Hauptinhalt (Rechts auf großem Screen, unterhalb der Visitenkarte auf Handy) -->
-            <main class="flex-1 mt-0 sm:mt-0 order-2 sm:order-none p-4 rounded-lg">
+            <main class="flex-1 mt-0 md:mt-0 order-2 md:order-none p-4 pr-6 rounded-lg">
                 <div id="home"></div>
+
                 <!-- Home -->
-                <div class="space-y-32 mt-2"> 
-                <section class="text-white sm:mt-32">
-                    <div class="text-5xl sm:text-8xl font-extrabold">
-                        <h1 class="hover-text-effect cursor-default">SOFTWARE</h1>
-                        <h2 class="hover-text-effect text-neutral-700 cursor-default">ENTWICKLER</h2>
-                    </div>
-                    <p class="text-2xl text-neutral-400 mt-8 leading-relaxed">
-                        Ich befinde mich in einer Umschulung zum Softwareentwickler und wachse täglich an neuen Herausforderungen – denn im Code wie im Leben gilt: Entweder es läuft, oder ich debugge!                    </p>
-                    <p id="skills"></p>
-                </section>
-                
-                <!-- Skills -->
-                <section class="text-white">
-                    <div class="text-5xl sm:text-8xl font-extrabold">
-                        <h1 class="hover-text-effect cursor-default">SKILLS</h1>
-                        <h2 class="hover-text-effect text-neutral-700 cursor-default">FÄHIGKEITEN</h2>
-                    </div>
-                
-                    <!-- Skill-Slider -->
-                    <div class="mt-12 flex justify-center items-center space-x-4">
-                        <!-- Tech-Skills Label -->
-                        <span id="tech-label" class="bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text font-semibold transition-all duration-300">
-                            Tech-Skills
-                        </span>
-                    
-                        <!-- Slider -->
-                        <label class="relative inline-flex items-center cursor-pointer">
-                            <input type="checkbox" id="toggle-skills" class="sr-only">
-                            <div id="slider-bg" class="w-24 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full transition-all duration-300 flex items-center px-1">
-                                <div id="slider-circle" class="w-10 h-10 bg-white rounded-full shadow-md transition-all duration-300"></div>
+                <div class="space-y-32 mt-2">
+                    <section class="text-white sm:mt-2 md:mt-32">
+                        <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                            <h1 class="hover-text-effect cursor-default">SOFTWARE</h1>
+                            <h2 class="hover-text-effect text-neutral-700 cursor-default">ENTWICKLER</h2>
+                        </div>
+                        <p class="text-2xl text-neutral-400 mt-8 leading-relaxed">
+                            Ich befinde mich in einer Umschulung zum Softwareentwickler und wachse täglich an neuen
+                            Herausforderungen – denn im Code wie im Leben gilt: Entweder es läuft, oder ich debugge!
+                        </p>
+                        <p id="skills"></p>
+                    </section>
+
+                    <!-- Skills -->
+                    <section class="text-white">
+                        <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                            <h1 class="hover-text-effect cursor-default">SKILLS</h1>
+                            <h2 class="hover-text-effect text-neutral-700 cursor-default">FÄHIGKEITEN</h2>
+                        </div>
+
+                        <!-- Skill-Slider -->
+                        <div class="mt-12 flex justify-center items-center space-x-4">
+                            <!-- Tech-Skills Label -->
+                            <span id="tech-label"
+                                class="bg-gradient-to-r from-orange-500 to-red-600 text-transparent bg-clip-text font-semibold transition-all duration-300">
+                                Tech-Skills
+                            </span>
+
+                            <!-- Slider -->
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="toggle-skills" class="sr-only">
+                                <div id="slider-bg"
+                                    class="w-24 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full transition-all duration-300 flex items-center px-1">
+                                    <div id="slider-circle"
+                                        class="w-10 h-10 bg-white rounded-full shadow-md transition-all duration-300">
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Soft-Skills Label -->
+                            <span id="soft-label" class="text-white font-semibold transition-all duration-300">
+                                Soft-Skills
+                            </span>
+                        </div>
+
+                        <!-- Skill Chart Container (With Separating Lines) -->
+                        <div class="relative mt-10">
+                            <!-- Separator Lines -->
+                            <div class="absolute left-1/3 top-[10px] bottom-[-18px] w-0.5 bg-white opacity-20 z-10">
                             </div>
-                        </label>
-                    
-                        <!-- Soft-Skills Label -->
-                        <span id="soft-label" class="text-white font-semibold transition-all duration-300">
-                            Soft-Skills
-                        </span>
-                    </div>
-                
-                    <!-- Skill Chart Container (With Separating Lines) -->
-                    <div class="relative mt-10">
-                        <!-- Separator Lines -->
-                        <div class="absolute left-1/3 top-[10px] bottom-[-18px] w-0.5 bg-white opacity-20 z-50"></div>
-                        <div class="absolute left-2/3 top-[10px] bottom-[-18px] w-0.5 bg-white opacity-20 z-50"></div>
-                
-                        <!-- Technical Skills Chart -->
-                        <div id="technical-skills">
-                            <div class="space-y-6 relative z-20">
-                                <div>
-                                    <p class="text-lg font-bold">Java</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                
-                                <div>
-                                    <p class="text-lg font-bold">SQL</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                
-                                <div>
-                                    <p class="text-lg font-bold">Python</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                
-                                <div>
-                                    <p class="text-lg font-bold">JavaScript</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
+                            <div class="absolute left-2/3 top-[10px] bottom-[-18px] w-0.5 bg-white opacity-20 z-10">
+                            </div>
 
-                                <div>
-                                    <p class="text-lg font-bold">HTML</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
+                            <!-- Technical Skills Chart -->
+                            <div id="technical-skills" class="relative z-0">
+                                <div class="space-y-6 relative">
+                                    <div>
+                                        <p class="text-lg font-bold">Java</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">SQL</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Python</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">JavaScript</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">HTML</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Tailwind CSS</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Linux/Bash</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Git</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div>
-                                    <p class="text-lg font-bold">Tailwind CSS</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
+                            <!-- Soft Skills Chart (Initially Hidden) -->
+                            <div id="soft-skills" class="hidden relative z-0">
+                                <div class="space-y-6 relative">
+                                    <div>
+                                        <p class="text-lg font-bold">Teamfähigkeit</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div>
-                                    <p class="text-lg font-bold">Linux/Bash</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
+                                    <div>
+                                        <p class="text-lg font-bold">Kommunikation</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div>
-                                    <p class="text-lg font-bold">Git</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 transition-all duration-700 ease-in-out"></div>
+                                    <div>
+                                        <p class="text-lg font-bold">Analytisches Denken</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Eigeninitiative & Lernbereitschaft</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Fehlertoleranz & Debugging</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Zeitmanagement</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Empathie</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-lg font-bold">Englisch</p>
+                                        <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
+                                            <div
+                                                class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                
-                        <!-- Soft Skills Chart (Initially Hidden) -->
-                        <div id="soft-skills" class="hidden">
-                            <div class="space-y-6 relative z-20">
-                                <div>
-                                    <p class="text-lg font-bold">Teamfähigkeit</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
 
-                                <div>
-                                    <p class="text-lg font-bold">Kommunikation</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                
-                                <div>
-                                    <p class="text-lg font-bold">Analytisches Denken</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                
-                                <div>
-                                    <p class="text-lg font-bold">Eigeninitiative & Lernbereitschaft</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <p class="text-lg font-bold">Fehlertoleranz & Debugging</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
+                        <!-- Level Legend -->
+                        <div class="mt-8 flex justify-between text-lg text-gray-500 w-full">
+                            <!-- Grundlagen -->
+                            <span
+                                class="w-1/3 text-center relative group flex flex-col items-center sm:flex-row sm:justify-center">
+                                <span class="cursor-pointer underline">Grundlagen</span>
+                                <!-- Info-Icon immer sichtbar und rechts vom Text -->
+                                <i data-lucide="info" class="mt-1 sm:ml-2 text-primary inline-block"></i>
+                                <!-- Tooltip erscheint von oben nach unten -->
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
+                                    Hat Basics verstanden und kann einfache Aufgaben lösen.
+                                </span>
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
+                                    Kommuniziert klar und arbeitet zuverlässig im Team.
+                                </span>
+                            </span>
 
-                                <div>
-                                    <p class="text-lg font-bold">Zeitmanagement</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
+                            <!-- Fortgeschritten -->
+                            <span
+                                class="w-1/3 text-center relative group flex flex-col items-center sm:flex-row sm:justify-center">
+                                <span class="cursor-pointer underline">Fortgeschritten</span>
+                                <!-- Info-Icon immer sichtbar und rechts vom Text -->
+                                <i data-lucide="info" class="mt-1 sm:ml-2 text-primary inline-block"></i>
+                                <!-- Tooltip erscheint von oben nach unten -->
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
+                                    Kann komplexere Probleme mit Hilfe von Dokumentationen und Recherche lösen.
+                                </span>
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
+                                    Kann Herausforderungen strukturiert lösen und gibt konstruktives Feedback.
+                                </span>
+                            </span>
 
-                                <div>
-                                    <p class="text-lg font-bold">Empathie</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <p class="text-lg font-bold">Englisch</p>
-                                    <div class="relative bg-gray-800 rounded-full h-5 w-full overflow-hidden">
-                                        <div class="skill-bar-soft absolute top-0 left-0 h-5 w-0 bg-gradient-to-r from-blue-500 via-green-500 to-yellow-500 transition-all duration-700 ease-in-out"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- Experte -->
+                            <span
+                                class="w-1/3 text-center relative group flex flex-col items-center sm:flex-row sm:justify-center">
+                                <span class="cursor-pointer underline">Experte</span>
+                                <!-- Info-Icon immer sichtbar und rechts vom Text -->
+                                <i data-lucide="info" class="mt-1 sm:ml-2 text-primary inline-block"></i>
+                                <!-- Tooltip erscheint von oben nach unten -->
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
+                                    Besitzt tiefes Verständnis, kann flexibel reagieren und Wissen gezielt weitergeben.
+                                </span>
+                                <span
+                                    class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
+                                    Besitzt ausgeprägte Sozialkompetenz, übernimmt Verantwortung und fördert
+                                    Zusammenarbeit.
+                                </span>
+                            </span>
                         </div>
-                    </div>
-                
-                    <!-- Level Legend -->
-                    <div class="mt-8 flex justify-between text-lg text-gray-500 w-full">
-                        <!-- Grundlagen -->
-                        <span class="w-1/3 text-center relative group flex flex-col items-center sm:flex-row sm:justify-center">
-                            <span class="cursor-pointer underline">Grundlagen</span>
-                            <!-- Info-Icon immer sichtbar und rechts vom Text -->
-                            <i data-lucide="info" class="mt-1 sm:ml-2 text-primary inline-block"></i>
-                            <!-- Tooltip erscheint von oben nach unten -->
-                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
-                                Hat Basics verstanden und kann einfache Aufgaben lösen.
-                            </span>
-                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
-                                Kommuniziert klar und arbeitet zuverlässig im Team.
-                            </span>
-                        </span>
-                    
-                        <!-- Fortgeschritten -->
-                        <span class="w-1/3 text-center relative group flex flex-col items-center sm:flex-row sm:justify-center">
-                            <span class="cursor-pointer underline">Fortgeschritten</span>
-                            <!-- Info-Icon immer sichtbar und rechts vom Text -->
-                            <i data-lucide="info" class="mt-1 sm:ml-2 text-primary inline-block"></i>
-                            <!-- Tooltip erscheint von oben nach unten -->
-                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
-                                Kann komplexere Probleme mit Hilfe von Dokumentationen und Recherche lösen.
-                            </span>
-                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
-                                Kann Herausforderungen strukturiert lösen und gibt konstruktives Feedback.
-                            </span>
-                        </span>
-                    
-                        <!-- Experte -->
-                        <span class="w-1/3 text-center relative group flex flex-col items-center sm:flex-row sm:justify-center">
-                            <span class="cursor-pointer underline">Experte</span>
-                            <!-- Info-Icon immer sichtbar und rechts vom Text -->
-                            <i data-lucide="info" class="mt-1 sm:ml-2 text-primary inline-block"></i>
-                            <!-- Tooltip erscheint von oben nach unten -->
-                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-tech">
-                                Besitzt tiefes Verständnis, kann flexibel reagieren und Wissen gezielt weitergeben.
-                            </span>
-                            <span class="absolute left-1/2 -translate-x-1/2 top-7 bg-neutral-800/90 text-white text-sm px-2 py-1 rounded-md opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-4 pointer-events-none tooltip-soft hidden">
-                                Besitzt ausgeprägte Sozialkompetenz, übernimmt Verantwortung und fördert Zusammenarbeit.
-                            </span>
-                        </span>
-                    </div>
-                    <p id="projects" ></p>
-                </section>
-                
-                <!-- Projekte -->
-                <section class="text-white">
-                    <!-- Hauptüberschrift -->
-                    <div class="text-5xl sm:text-8xl font-extrabold">
-                        <h1 class="hover-text-effect cursor-default">MEINE</h1>
-                        <h2 class="hover-text-effect text-neutral-700 cursor-default">PROJEKTE</h2>
-                    </div>
-                
-                    <!-- Projekt-Grid -->
-                    <div class="mt-8 space-y-6">
-                        <!-- Projekt Snake -->
-                        <a href="https://github.com/rinchise/gamesnake" target="_blank" 
-                        class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
-                                 transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
-                                 w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
-                         <!-- Bild-Container -->
-                         <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                            <img src="assets/snake.png" alt="snake" 
-                                 class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
-                        </div>
-                        
-                         <!-- Beschreibung -->
-                         <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-primary">Snake</h3>
-                            <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
-                                Ein klassisches Snake-Spiel in Python mit Singleplayer- & lokalem 2-Spieler-Multiplayer. Ein Score-System mit Datenbank speichert Highscores.
-                            </p>
-                         </div>
-                         <!-- Pfeil unten rechts -->
-                         <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
-                             <i data-lucide="chevrons-right" class="w-6 h-6"></i>
-                         </div>
-                     </a>
-                
-                        <!-- Projekt Taschenrechner -->
-                        <a href="https://github.com/rinchise/calculator" target="_blank" 
-                        class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
-                                 transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
-                                 w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
-                            <!-- Bild -->
-                            <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                                <img src="assets/calculator.png" alt="calculator" 
-                                     class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
-                            </div>
-                            <!-- Beschreibung -->
-                            <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
-                                <h3 class="text-2xl font-bold text-primary">Taschenrechner</h3>
-                                <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
-                                    Ein einfacher Taschenrechner mit grafischer Benutzeroberfläche, entwickelt mit Java Swing. 
-                                </p>
-                            </div>
-                            <!-- Pfeil unten rechts -->
-                            <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
-                                <i data-lucide="chevrons-right" class="w-6 h-6"></i>
-                            </div>
-                        </a>
-                
-                        <!-- Projekt Tic Tac Toe -->
-                        <a href="https://github.com/rinchise/tictactoe" target="_blank" 
-                        class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
-                                 transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
-                                 w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
-                            <!-- Bild -->
-                            <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                                <img src="assets/tictactoe.png" alt="tictactoe" 
-                                     class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
-                            </div>
-                            <!-- Beschreibung -->
-                            <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
-                                <h3 class="text-2xl font-bold text-primary">Tic Tac Toe</h3>
-                                <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
-                                    Ein klassisches Tic-Tac-Toe-Spiel als Konsolenanwendung in Java. Spieler wählen Namen und setzen abwechselnd ihre Zeichen, indem sie Zeile und Spalte eingeben.
-                                </p>
-                            </div>
-                            <!-- Pfeil unten rechts -->
-                            <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
-                                <i data-lucide="chevrons-right" class="w-6 h-6"></i>
-                            </div>
-                        </a>
-                
-                        <!-- Projekt Portfolio -->
-                        <a href="https://github.com/rinchise/portfolio" target="_blank" 
-                        class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
-                                 transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
-                                 w-full max-w-2xl mx-auto h-auto sm:h-42 flex flex-col sm:flex-row">
-                         <!-- Bild -->
-                         <div class="w-full sm:w-1/3 h-32 sm:h-full flex items-end sm:items-center justify-center p-2">
-                            <img src="assets/portfolio.png" alt="portfolio" 
-                                 class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
-                        </div>
-                         <!-- Beschreibung -->
-                         <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-primary">Portfolio</h3>
-                            <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
-                                 Meine Portfolio-Website, erstellt mit HTML, Tailwind CSS und JavaScript. Präsentiert meine Projekte, Fähigkeiten und Kontaktmöglichkeiten.
-                             </p>
-                         </div>
-                            <!-- Pfeil unten rechts -->
-                            <div class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
-                                <i data-lucide="chevrons-right" class="w-6 h-6"></i>
-                            </div>
-                        </a>
-                    </div>
-                </section>
+                        <p id="projects"></p>
+                    </section>
 
-                <!-- About Me -->
-                <section id="about" class="text-white">
-                    <!-- Hauptüberschrift -->
-                    <div class="text-5xl sm:text-7xl font-extrabold">
-                        <h1 class="hover-text-effect cursor-default">ABOUT</h1>
-                        <h2 class="hover-text-effect text-neutral-700 cursor-default">ME</h2>
-                    </div>
-                    
-                    <!-- Beschreibung -->
-                    <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">A</span>ls jemand, der sich ständig weiterentwickeln möchte, begeistere ich mich nicht nur für kreatives Problemlösen in der Softwareentwicklung, sondern auch für persönliche Fortschritte in anderen Bereichen meines Lebens.
-                    </p>    
-                    
-                    <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">L</span>ernen bedeutet für mich, immer neue Wege zu entdecken – sei es durch das Entwickeln durchdachter Anwendungen, das Lesen von Büchern oder das Erarbeiten neuer Trainingsmethoden im Fitnessstudio.
-                    </p>
+                    <!-- Projekte -->
+                    <section class="text-white">
+                        <!-- Hauptüberschrift -->
+                        <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                            <h1 class="hover-text-effect cursor-default">MEINE</h1>
+                            <h2 class="hover-text-effect text-neutral-700 cursor-default">PROJEKTE</h2>
+                        </div>
 
-                    <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">E</span>ffizienz und Struktur faszinieren mich nicht nur beim Programmieren, sondern auch im Alltag. Ich liebe es, mich durch Sport herauszufordern, beim Gaming strategisch zu denken oder in spannenden Geschichten abzutauchen.
-                    </p>
-                    
-                    <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
-                        <span class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">X</span>treme Motivation treibt mich an. Ich stelle mich gerne neuen Herausforderungen, entdecke innovative Methoden und feile kontinuierlich an meinen Fähigkeiten – technisch wie persönlich.
-                    </p>
-                </section>
+                        <!-- Projekt-Grid -->
+                        <div class="mt-8 space-y-6 w-full md:w-[680px] lg:w-[700px]">
+                            <!-- Projekt Snake -->
+                            <a href="https://github.com/rinchise/gamesnake" target="_blank" class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                                  transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                                  w-full h-auto sm:h-42 flex flex-col md:flex-row">
+                                <!-- Bild-Container -->
+                                <div
+                                    class="w-full md:w-[230px] h-48 md:h-full flex items-center justify-center p-0 md:p-2">
+                                    <img src="assets/snake.png" alt="snake"
+                                        class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
+                                </div>
+
+                                <!-- Beschreibung -->
+                                <div class="w-full md:w-[470px] p-5 pr-10 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-bold text-primary">Snake</h3>
+                                    <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                        Ein klassisches Snake-Spiel in Python mit Singleplayer- & lokalem
+                                        2-Spieler-Multiplayer. Ein Score-System mit Datenbank speichert Highscores.
+                                    </p>
+                                </div>
+                                <!-- Pfeil unten rechts -->
+                                <div
+                                    class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                    <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                                </div>
+                            </a>
+
+                            <!-- Projekt Taschenrechner -->
+                            <a href="https://github.com/rinchise/calculator" target="_blank" class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                                    transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                                    w-full mx-auto h-auto sm:h-42 flex flex-col md:flex-row">
+                                <!-- Bild -->
+                                <div
+                                    class="w-full md:w-[230px] h-48 md:h-full flex items-center justify-center p-0 md:p-2">
+                                    <img src="assets/calculator.png" alt="calculator"
+                                        class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
+                                </div>
+                                <!-- Beschreibung -->
+                                <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-bold text-primary">Taschenrechner</h3>
+                                    <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                        Ein einfacher Taschenrechner mit grafischer Benutzeroberfläche, entwickelt mit
+                                        Java Swing.
+                                    </p>
+                                </div>
+                                <!-- Pfeil unten rechts -->
+                                <div
+                                    class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                    <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                                </div>
+                            </a>
+
+                            <!-- Projekt Tic Tac Toe -->
+                            <a href="https://github.com/rinchise/tictactoe" target="_blank" class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                                    transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                                    w-full mx-auto h-auto sm:h-42 flex flex-col md:flex-row">
+                                <div
+                                    class="w-full md:w-[230px] h-48 md:h-full flex items-center justify-center p-0 md:p-2">
+                                    <img src="assets/tictactoe.png" alt="tictactoe"
+                                        class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
+                                </div>
+                                <!-- Beschreibung -->
+                                <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-bold text-primary">Tic Tac Toe</h3>
+                                    <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                        Ein klassisches Tic-Tac-Toe-Spiel als Konsolenanwendung in Java. Spieler wählen
+                                        Position indem sie Zeile und Spalte eingeben.
+                                    </p>
+                                </div>
+                                <!-- Pfeil unten rechts -->
+                                <div
+                                    class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                    <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                                </div>
+                            </a>
+
+                            <!-- Projekt Portfolio -->
+                            <a href="https://github.com/rinchise/portfolio" target="_blank" class="group block bg-panel rounded-xl shadow-md overflow-hidden hover:scale-105 hover:shadow-lg 
+                                    transition-transform duration-300 cursor-pointer hover:bg-neutral-700/50 active:scale-95 relative
+                                    w-full mx-auto h-auto sm:h-42 flex flex-col md:flex-row">
+                                <!-- Bild -->
+                                <div
+                                    class="w-full md:w-[230px] h-48 md:h-full flex items-center justify-center p-0 md:p-2">
+                                    <img src="assets/portfolio.png" alt="portfolio"
+                                        class="h-full w-full object-cover transform scale-110 transition-all duration-500 group-hover:scale-100 group-hover:rounded-lg">
+                                </div>
+                                <!-- Beschreibung -->
+                                <div class="w-full sm:w-2/3 p-5 pr-10 flex flex-col justify-center">
+                                    <h3 class="text-2xl font-bold text-primary">Portfolio</h3>
+                                    <p class="text-neutral-400 mt-2 text-lg leading-relaxed">
+                                        Meine Portfolio-Website, erstellt mit HTML, Tailwind CSS und JavaScript.
+                                        Präsentiert meine Projekte, Fähigkeiten und Kontaktmöglichkeiten.
+                                    </p>
+                                </div>
+                                <!-- Pfeil unten rechts -->
+                                <div
+                                    class="absolute bottom-4 right-4 text-primary transition-transform duration-300 group-hover:animate-wiggleArrow">
+                                    <i data-lucide="chevrons-right" class="w-6 h-6"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- About Me -->
+                    <section id="about" class="text-white">
+                        <!-- Hauptüberschrift -->
+                        <div class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+                            <h1 class="hover-text-effect cursor-default">ABOUT</h1>
+                            <h2 class="hover-text-effect text-neutral-700 cursor-default">ME</h2>
+                        </div>
+
+                        <!-- Beschreibung -->
+                        <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
+                            <span
+                                class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">A</span>ls
+                            jemand, der sich ständig weiterentwickeln möchte, begeistere ich mich nicht nur für
+                            kreatives Problemlösen in der Softwareentwicklung, sondern auch für persönliche Fortschritte
+                            in anderen Bereichen meines Lebens.
+                        </p>
+
+                        <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
+                            <span
+                                class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">L</span>ernen
+                            bedeutet für mich, immer neue Wege zu entdecken – sei es durch das Entwickeln durchdachter
+                            Anwendungen, das Lesen von Büchern oder das Erarbeiten neuer Trainingsmethoden im
+                            Fitnessstudio.
+                        </p>
+
+                        <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
+                            <span
+                                class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">E</span>ffizienz
+                            und Struktur faszinieren mich nicht nur beim Programmieren, sondern auch im Alltag. Ich
+                            liebe es, mich durch Sport herauszufordern, beim Gaming strategisch zu denken oder in
+                            spannenden Geschichten abzutauchen.
+                        </p>
+
+                        <p class="sm:text-2xl text-lg text-neutral-400 mt-8 mx-auto">
+                            <span
+                                class="hover-text-effect text-6xl float-left leading-[0.9] mr-3 drop-shadow-lg ">X</span>treme
+                            Motivation treibt mich an. Ich stelle mich gerne neuen Herausforderungen, entdecke
+                            innovative Methoden und feile kontinuierlich an meinen Fähigkeiten – technisch wie
+                            persönlich.
+                        </p>
+                    </section>
                 </div>
             </main>
         </div>
-    </div>    
+    </div>
     <script src="script.js" defer></script>
 </body>
+
 </html>

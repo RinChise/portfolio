@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Tailwind-Konfiguration
+    // Tailwind Configuration
     if (typeof tailwind !== "undefined") {
         tailwind.config = {
             theme: {
@@ -34,176 +34,256 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         };
     } else {
-        console.error("Tailwind konnte nicht geladen werden.");
+        console.error("Tailwind could not be loaded.");
     }
     
-    const flipCard = document.getElementById("flip-card");
-    const profilePic = document.getElementById("profile-pic");
-    const profilePicAlt = document.getElementById("profile-pic-alt");
+    // Navbar scroll behavior
+    setupNavbar();
+    
+    // Card flip functionality
+    setupCardFlip();
 
-    let isFlipped = false;
-
-    profilePic.addEventListener("click", function () {
-        isFlipped = !isFlipped;
-        flipCard.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
-    });
-
-    profilePicAlt.addEventListener("click", function () {
-        isFlipped = !isFlipped;
-        flipCard.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
-    });
-
-    // Lucide Icons aktivieren
+    // Initialize Lucide Icons
     if (typeof lucide !== "undefined") {
         lucide.createIcons();
     } else {
-        console.error("Lucide Icons konnten nicht geladen werden.");
+        console.error("Lucide Icons could not be loaded.");
     }
 
-    // Liste der möglichen Tailwind-Farben
-    const colors = [
-        "text-red-500", "text-blue-500", "text-green-500", "text-yellow-500",
-        "text-purple-500", "text-pink-500", "text-indigo-500", "text-orange-500",
-        "text-teal-500", "text-lime-500"
-    ];
+    // Text hover effects
+    setupTextHoverEffects();
 
-    // Hover-Text-Effekt für Buchstaben mit Bouncing
-    const textElements = document.querySelectorAll(".hover-text-effect");
+    // Skill bars animation
+    setupSkillBars();
+    
+    // Functions
+    
+    function setupNavbar() {
+        let lastScrollTop = 0;
+        let scrollTimeout = null;
+        const navbar = document.getElementById('navbar');
+        
+        if (navbar) {
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Always show navbar at the top of the page
+                if (scrollTop < 50) {
+                    navbar.classList.remove('-translate-y-24');
+                    return;
+                }
+                
+                // Only hide navbar when actively scrolling down some distance
+                if (scrollTop > lastScrollTop + 10) {
+                    // Scrolling down significantly
+                    navbar.classList.add('-translate-y-24');
+                } else if (scrollTop < lastScrollTop - 5) {
+                    // Scrolling up even a little
+                    navbar.classList.remove('-translate-y-24');
+                }
+                
+                lastScrollTop = scrollTop;
+                
+                // Clear previous timeout
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                
+                // Set a timeout to detect when scrolling stops
+                scrollTimeout = setTimeout(function() {
+                    // When scrolling stops, keep navbar in its current state
+                }, 100);
+            });
+        }
+    }
+    
+    function setupCardFlip() {
+        const flipCard = document.getElementById("flip-card");
+        const profilePic = document.getElementById("profile-pic");
+        const profilePicAlt = document.getElementById("profile-pic-alt");
 
-    textElements.forEach(element => {
-        const words = element.textContent.split(" "); // Text in Wörter aufteilen
-        element.innerHTML = ""; // Inhalt leeren
+        // Check if all required elements exist before adding event listeners
+        if (flipCard && profilePic && profilePicAlt) {
+            let isFlipped = false;
 
-        words.forEach((word, wordIndex) => {
-            let wordSpan = document.createElement("span");
-            wordSpan.classList.add("whitespace-nowrap"); // Verhindert Wort-Trennung
-
-            word.split("").forEach((letter, letterIndex) => {
-                let span = document.createElement("span");
-                span.textContent = letter;
-
-                // JEDER BUCHSTABE bekommt inline-block, um sicherzustellen, dass M sich bewegen kann
-                span.classList.add(
-                    "inline-block",
-                    "transition-transform",
-                    "duration-300",
-                    "ease-out"
-                );
-
-                // Füge Hover-Farbe & Bouncing-Effekt hinzu
-                span.addEventListener("mouseenter", function () {
-                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                    span.classList.forEach(cls => {
-                        if (cls.startsWith("text-")) span.classList.remove(cls);
-                    });
-                    span.classList.add(randomColor);
-
-                    // Bouncing Animation nur neu starten, wenn nicht bereits aktiv
-                    if (!span.classList.contains("animate-bounceLetter")) {
-                        span.classList.add("animate-bounceLetter");
-
-                        // Entferne die Animation nach 0.6s, damit sie neu gestartet werden kann
-                        setTimeout(() => {
-                            span.classList.remove("animate-bounceLetter");
-                        }, 600);
-                    }
-                });
-
-                wordSpan.appendChild(span);
+            profilePic.addEventListener("click", function () {
+                isFlipped = !isFlipped;
+                flipCard.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
             });
 
-            element.appendChild(wordSpan);
-
-            // Leerzeichen zwischen Wörtern, aber nicht am Ende
-            if (wordIndex < words.length - 1) {
-                element.appendChild(document.createTextNode(" "));
-            }
-        });
-    });
-
-    // Skill-Balken-Animation
-    const toggleSlider = document.getElementById("toggle-skills");
-    const sliderBg = document.getElementById("slider-bg");
-    const sliderCircle = document.getElementById("slider-circle");
-    const techLabel = document.getElementById("tech-label");
-    const softLabel = document.getElementById("soft-label");
-    const technicalSkills = document.getElementById("technical-skills");
-    const softSkills = document.getElementById("soft-skills");
-    const skillBars = document.querySelectorAll(".skill-bar");
-    const softSkillBars = document.querySelectorAll(".skill-bar-soft");
-
-    // Tooltips für Tech- und Soft-Skills
-    const tooltipsTech = document.querySelectorAll(".tooltip-tech");
-    const tooltipsSoft = document.querySelectorAll(".tooltip-soft");
-
-    const technicalLevels = ["44%", "72%", "40%", "15%", "70%", "60%", "27%", "25%"];
-    const softSkillLevels = ["82%", "84%", "50%", "85%", "65%", "60%", "80%", "95%"];
-
-    function animateSkillBars() {
-        skillBars.forEach((bar, index) => {
-            bar.style.width = isElementInViewport(bar) ? technicalLevels[index] : "0%";
-        });
-
-        softSkillBars.forEach((bar, index) => {
-            bar.style.width = isElementInViewport(bar) ? softSkillLevels[index] : "0%";
-        });
-    }
-
-    function isElementInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top < window.innerHeight * 0.90 && 
-            rect.bottom > window.innerHeight * 0.10
-        );
-    }
-
-    // Scroll-Event für die Animation
-    window.addEventListener("scroll", animateSkillBars);
-    window.addEventListener("resize", animateSkillBars);
-    animateSkillBars(); // Direkt nach dem Laden aufrufen
-
-    // Toggle-Slider für Diagramme & Farben
-    let showingSoftSkills = false;
-    toggleSlider.checked = showingSoftSkills;
-    updateUI(showingSoftSkills);
-
-    toggleSlider.addEventListener("change", function () {
-        showingSoftSkills = toggleSlider.checked;
-        updateUI(showingSoftSkills);
-        animateSkillBars(); // Direkt updaten
-    });
-
-    function updateUI(state) {
-        // Skills umschalten
-        technicalSkills.classList.toggle("hidden", state);
-        softSkills.classList.toggle("hidden", !state);
-
-        // Tooltips umschalten
-        tooltipsTech.forEach(tooltip => tooltip.classList.toggle("hidden", state));
-        tooltipsSoft.forEach(tooltip => tooltip.classList.toggle("hidden", !state));
-
-        if (state) {
-            // Soft-Skills aktiv
-            sliderBg.classList.remove("from-orange-500", "to-red-600");
-            sliderBg.classList.add("from-blue-600", "to-green-500");
-            sliderCircle.classList.add("translate-x-12");
-
-            techLabel.classList.remove("bg-gradient-to-r", "from-orange-500", "to-red-600", "text-transparent", "bg-clip-text");
-            techLabel.classList.add("text-white");
-
-            softLabel.classList.remove("text-white");
-            softLabel.classList.add("bg-gradient-to-r", "from-blue-600", "to-green-500", "text-transparent", "bg-clip-text");
+            profilePicAlt.addEventListener("click", function () {
+                isFlipped = !isFlipped;
+                flipCard.style.transform = isFlipped ? "rotateY(180deg)" : "rotateY(0deg)";
+            });
         } else {
-            // Tech-Skills aktiv
-            sliderBg.classList.remove("from-blue-600", "to-green-500");
-            sliderBg.classList.add("from-orange-500", "to-red-600");
-            sliderCircle.classList.remove("translate-x-12");
+            console.warn("One or more elements for card flip animation were not found");
+        }
+    }
+    
+    function setupTextHoverEffects() {
+        // Available Tailwind colors for hover effect
+        const colors = [
+            "text-red-500", "text-blue-500", "text-green-500", "text-yellow-500",
+            "text-purple-500", "text-pink-500", "text-indigo-500", "text-orange-500",
+            "text-teal-500", "text-lime-500"
+        ];
 
-            softLabel.classList.remove("bg-gradient-to-r", "from-blue-600", "to-green-500", "text-transparent", "bg-clip-text");
-            softLabel.classList.add("text-white");
+        // Hover text effect for letters with bouncing
+        const textElements = document.querySelectorAll(".hover-text-effect");
 
-            techLabel.classList.remove("text-white");
-            techLabel.classList.add("bg-gradient-to-r", "from-orange-500", "to-red-600", "text-transparent", "bg-clip-text");
+        textElements.forEach(element => {
+            const words = element.textContent.split(" "); // Split text into words
+            element.innerHTML = ""; // Clear content
+
+            words.forEach((word, wordIndex) => {
+                let wordSpan = document.createElement("span");
+                wordSpan.classList.add("whitespace-nowrap"); // Prevent word breaking
+
+                word.split("").forEach((letter) => {
+                    let span = document.createElement("span");
+                    span.textContent = letter;
+
+                    // Each letter gets inline-block to ensure it can move
+                    span.classList.add(
+                        "inline-block",
+                        "transition-transform",
+                        "duration-300",
+                        "ease-out"
+                    );
+
+                    // Add hover color & bouncing effect
+                    span.addEventListener("mouseenter", function () {
+                        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                        // Remove any existing text color classes
+                        span.classList.forEach(cls => {
+                            if (cls.startsWith("text-")) span.classList.remove(cls);
+                        });
+                        span.classList.add(randomColor);
+
+                        // Only start bouncing animation if not already active
+                        if (!span.classList.contains("animate-bounceLetter")) {
+                            span.classList.add("animate-bounceLetter");
+
+                            // Remove animation after 0.6s so it can be restarted
+                            setTimeout(() => {
+                                span.classList.remove("animate-bounceLetter");
+                            }, 600);
+                        }
+                    });
+
+                    wordSpan.appendChild(span);
+                });
+
+                element.appendChild(wordSpan);
+
+                // Add space between words, but not at the end
+                if (wordIndex < words.length - 1) {
+                    element.appendChild(document.createTextNode(" "));
+                }
+            });
+        });
+    }
+    
+    function setupSkillBars() {
+        const toggleSkills = document.getElementById("toggle-skills");
+        const sliderBg = document.getElementById("slider-bg");
+        const sliderCircle = document.getElementById("slider-circle");
+        const techLabel = document.getElementById("tech-label");
+        const softLabel = document.getElementById("soft-label");
+        const technicalSkills = document.getElementById("technical-skills");
+        const softSkills = document.getElementById("soft-skills");
+        const skillBars = document.querySelectorAll(".skill-bar");
+        const softSkillBars = document.querySelectorAll(".skill-bar-soft");
+        
+        // Tooltips for tech and soft skills
+        const tooltipsTech = document.querySelectorAll(".tooltip-tech");
+        const tooltipsSoft = document.querySelectorAll(".tooltip-soft");
+
+        // Skill levels - percentage width for each bar
+        const technicalLevels = ["44%", "72%", "40%", "15%", "70%", "60%", "27%", "25%"];
+        const softSkillLevels = ["82%", "84%", "50%", "85%", "65%", "60%", "80%", "95%"];
+
+        // Animate skill bars when they're in viewport
+        function animateSkillBars() {
+            skillBars.forEach((bar, index) => {
+                if (index < technicalLevels.length) {
+                    bar.style.width = isElementInViewport(bar) ? technicalLevels[index] : "0%";
+                }
+            });
+
+            softSkillBars.forEach((bar, index) => {
+                if (index < softSkillLevels.length) {
+                    bar.style.width = isElementInViewport(bar) ? softSkillLevels[index] : "0%";
+                }
+            });
+        }
+
+        // Check if element is visible in viewport
+        function isElementInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight * 0.90 && 
+                rect.bottom > window.innerHeight * 0.10
+            );
+        }
+
+        // Handle scroll and resize events for animations
+        window.addEventListener("scroll", animateSkillBars);
+        window.addEventListener("resize", animateSkillBars);
+        
+        // Call immediately after loading
+        setTimeout(animateSkillBars, 300);
+
+        // Make sure all skill elements exist before adding event listeners
+        if (toggleSkills && sliderBg && sliderCircle && techLabel && softLabel && 
+            technicalSkills && softSkills) {
+            
+            // Toggle slider for charts & colors
+            let showingSoftSkills = false;
+            toggleSkills.checked = showingSoftSkills;
+            updateUI(showingSoftSkills);
+
+            toggleSkills.addEventListener("change", function () {
+                showingSoftSkills = toggleSkills.checked;
+                updateUI(showingSoftSkills);
+                animateSkillBars(); // Update immediately
+            });
+
+            function updateUI(state) {
+                // Toggle skills
+                technicalSkills.classList.toggle("hidden", state);
+                softSkills.classList.toggle("hidden", !state);
+
+                // Toggle tooltips
+                tooltipsTech.forEach(tooltip => tooltip.classList.toggle("hidden", state));
+                tooltipsSoft.forEach(tooltip => tooltip.classList.toggle("hidden", !state));
+
+                if (state) {
+                    // Soft skills active
+                    sliderBg.classList.remove("from-orange-500", "to-red-600");
+                    sliderBg.classList.add("from-blue-600", "to-green-500");
+                    sliderCircle.classList.add("translate-x-12");
+
+                    techLabel.classList.remove("bg-gradient-to-r", "from-orange-500", "to-red-600", "text-transparent", "bg-clip-text");
+                    techLabel.classList.add("text-white");
+
+                    softLabel.classList.remove("text-white");
+                    softLabel.classList.add("bg-gradient-to-r", "from-blue-600", "to-green-500", "text-transparent", "bg-clip-text");
+                } else {
+                    // Tech skills active
+                    sliderBg.classList.remove("from-blue-600", "to-green-500");
+                    sliderBg.classList.add("from-orange-500", "to-red-600");
+                    sliderCircle.classList.remove("translate-x-12");
+
+                    softLabel.classList.remove("bg-gradient-to-r", "from-blue-600", "to-green-500", "text-transparent", "bg-clip-text");
+                    softLabel.classList.add("text-white");
+
+                    techLabel.classList.remove("text-white");
+                    techLabel.classList.add("bg-gradient-to-r", "from-orange-500", "to-red-600", "text-transparent", "bg-clip-text");
+                }
+            }
+        } else {
+            console.warn("One or more skill toggle elements were not found");
         }
     }
 });
