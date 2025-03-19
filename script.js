@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tooltipsSoft = document.querySelectorAll(".tooltip-soft");
 
         // Skill levels - percentage width for each bar
-        const technicalLevels = ["44%", "72%", "40%", "15%", "70%", "60%", "27%", "25%"];
+        const technicalLevels = ["44%", "72%", "40%", "15%", "70%", "60%", "27%", "25%", "20%", "18%"];
         const softSkillLevels = ["82%", "84%", "50%", "85%", "65%", "60%", "80%", "95%"];
 
         // Animate skill bars when they're in viewport
