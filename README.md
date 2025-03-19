@@ -1,8 +1,8 @@
-# 🌐 Mein Portfolio
+# Mein Portfolio
 
 Dies ist meine **persönliche Portfolio-Website**, die meine Projekte, Fähigkeiten und Kontaktmöglichkeiten präsentiert. Sie wurde mit **HTML**, **Tailwind CSS** und **JavaScript** erstellt. 
 
-## 📂 Technologien
+## Technologien
 
 Diese Website wurde mit folgenden Technologien erstellt:
 
@@ -10,7 +10,7 @@ Diese Website wurde mit folgenden Technologien erstellt:
 - **Tailwind CSS** – Für ein modernes und flexibles Styling
 - **JavaScript** – Interaktive Elemente und dynamische Inhalte
 
-## 📥 Installation
+## Installation
 
 Falls du das Projekt lokal testen oder anpassen möchtest:
 
@@ -24,7 +24,7 @@ Falls du das Projekt lokal testen oder anpassen möchtest:
    ```
    Oder verwende eine Live-Server-Extension in **VS Code**.
 
-## 📌 Features
+## Features
 
 **Responsive Design** – Perfekt für Desktop, Tablet und Mobile  
 **Tailwind CSS Styling** – Effizient und anpassbar  
