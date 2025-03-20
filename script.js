@@ -63,37 +63,66 @@ document.addEventListener("DOMContentLoaded", function () {
         let scrollTimeout = null;
         const navbar = document.getElementById('navbar');
         
+        // Globale Flags
+        window.isNavigatingViaNavbar = false;
+        window.preventNavbarHide = false;
+        
         if (navbar) {
-            window.addEventListener('scroll', function() {
+            // Speichere die ursprüngliche Position
+            const navLinks = navbar.querySelectorAll('a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    // Setze beide Flags beim Klicken
+                    window.isNavigatingViaNavbar = true;
+                    window.preventNavbarHide = true;
+                    
+                    // Stelle sicher, dass die Navbar sofort sichtbar ist
+                    navbar.classList.remove('-translate-y-24');
+                    
+                    // Zeitverzögerte Rücksetzung
+                    setTimeout(() => {
+                        window.isNavigatingViaNavbar = false;
+                    }, 2500);
+                    
+                    // Noch längerer Timeout für preventNavbarHide
+                    setTimeout(() => {
+                        window.preventNavbarHide = false;
+                    }, 3000);
+                });
+            });
+            
+            // Separates Event für das Scroll-Ereignis
+            let scrollHandler = function() {
+                // Beende frühzeitig, wenn Navbar-Navigation aktiv ist
+                if (window.isNavigatingViaNavbar || window.preventNavbarHide) {
+                    navbar.classList.remove('-translate-y-24');
+                    return;
+                }
+                
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 
-                // Always show navbar at the top of the page
+                // Immer am Anfang der Seite zeigen
                 if (scrollTop < 50) {
                     navbar.classList.remove('-translate-y-24');
                     return;
                 }
                 
-                // Only hide navbar when actively scrolling down some distance
+                // Normale Scroll-Logik
                 if (scrollTop > lastScrollTop + 10) {
-                    // Scrolling down significantly
+                    // Nach unten scrollen
                     navbar.classList.add('-translate-y-24');
                 } else if (scrollTop < lastScrollTop - 5) {
-                    // Scrolling up even a little
+                    // Nach oben scrollen
                     navbar.classList.remove('-translate-y-24');
                 }
                 
                 lastScrollTop = scrollTop;
-                
-                // Clear previous timeout
-                if (scrollTimeout) {
-                    clearTimeout(scrollTimeout);
-                }
-                
-                // Set a timeout to detect when scrolling stops
-                scrollTimeout = setTimeout(function() {
-                    // When scrolling stops, keep navbar in its current state
-                }, 100);
-            });
+            };
+            
+            // Entfernt alle vorherigen Scroll-Events und fügt den neuen hinzu
+            window.removeEventListener('scroll', scrollHandler);
+            window.addEventListener('scroll', scrollHandler);
         }
     }
     
@@ -200,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const tooltipsSoft = document.querySelectorAll(".tooltip-soft");
 
         // Skill levels - percentage width for each bar
-        const technicalLevels = ["44%", "72%", "40%", "15%", "70%", "60%", "27%", "25%", "20%", "18%"];
+        const technicalLevels = ["44%", "68%", "40%", "15%", "66%", "60%", "27%", "25%", "20%", "18%"];
         const softSkillLevels = ["82%", "84%", "50%", "85%", "65%", "60%", "80%", "95%"];
 
         // Animate skill bars when they're in viewport
